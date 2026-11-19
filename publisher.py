@@ -7,7 +7,7 @@
   python publisher.py output/barings --dry-run    # only write/print title, description, tags
   python publisher.py output/barings --privacy private --at 2026-11-18T17:00:00Z
   python publisher.py output/<slug> --slot auto   # next free slot: 17:00, 20:00 or 23:00 Rome time
-  python publisher.py output/<slug> --at 2026-11-20T19:00:00Z  # exact slot (UTC)
+  python publisher.py output/<slug> --slot 20:00  # next 20:00 Rome time (scheduled)
 
 Needs YT_CLIENT_ID, YT_CLIENT_SECRET and (after --auth) YT_REFRESH_TOKEN.
 Writes output/<slug>/youtube.json with the video id, so a Short is never uploaded twice.
@@ -230,6 +230,20 @@ def next_slot(taken, now=None):
     sys.exit("no free slot in the next 14 days")
 
 
+def slot_at(hhmm, now=None):
+    """Next occurrence (UTC, RFC3339) of HH:MM Rome time, at least MIN_LEAD from now."""
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo(SLOT_TZ)
+    now = now or dt.datetime.now(dt.timezone.utc)
+    hh, mm = map(int, hhmm.split(":"))
+    day = now.astimezone(tz).date()
+    for d in range(2):
+        t = dt.datetime(day.year, day.month, day.day, hh, mm, tzinfo=tz) + dt.timedelta(days=d)
+        if t.astimezone(dt.timezone.utc) - now >= MIN_LEAD:
+            return t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    sys.exit(f"cannot schedule {hhmm}")
+
+
 # ---------- upload ----------
 
 def upload(video, meta, privacy, publish_at, token):
@@ -280,6 +294,9 @@ def publish(d, a, token=None):
     if a.slot == "auto" and not a.at:
         a.at = next_slot(taken_times(token))
         log(f"slot: {a.at}")
+    elif a.slot and not a.at:
+        a.at = slot_at(a.slot)
+        log(f"slot {a.slot} Rome: {a.at}")
     log(f"uploading {slug} ({os.path.getsize(video) / 1e6:.1f} MB, "
         f"{'scheduled ' + a.at if a.at else a.privacy})")
     vid = upload(video, meta, a.privacy, a.at, token)
@@ -297,8 +314,8 @@ def main():
     ap.add_argument("--auth", action="store_true", help="one-time login, prints YT_REFRESH_TOKEN")
     ap.add_argument("--privacy", default="public", choices=["public", "unlisted", "private"])
     ap.add_argument("--at", help="schedule, RFC3339 UTC e.g. 2026-11-18T17:00:00Z")
-    ap.add_argument("--slot", choices=["auto"],
-                    help="schedule at the next free daily slot (SLOTS, Rome time)")
+    ap.add_argument("--slot", help="'auto' = next free daily slot (SLOTS), or 'HH:MM' Rome time "
+                                   "(e.g. 20:00 = next 20:00 Rome)")
     ap.add_argument("--dry-run", action="store_true", help="only build title/description/tags")
     a = ap.parse_args()
 

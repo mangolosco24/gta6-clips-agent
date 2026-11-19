@@ -1,4 +1,6 @@
 requests
+# time zone database (Windows has none): publisher.py slots are in Europe/Rome
+tzdata
 # [default] adds yt-dlp-ejs; deno is the JS runtime YouTube's challenges need
 yt-dlp[default]
 deno
