@@ -133,7 +133,7 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   If the only remaining moments are weak, skip the slot instead of posting filler.
 - If a campaign closes, or a streamer/campaign complains: set `active` to false and tell the user.
 - Campaigns with `active: false` are never clipped.
-- Several active campaigns (kreekcraft, dylanpage: YouTube; dom: Kick clips; tomo closed 2026-11-19, budget used up): candidates.json mixes them. Pick the
+- Several active campaigns (kreekcraft: YouTube; dom: Kick clips; bobby: Twitch clips; tomo closed 2026-11-19, budget used up; dylanpage paused 2026-11-20, 10k-view minimum too high for now): candidates.json mixes them. Pick the
   strongest moment, but alternate campaigns between slots when quality is similar (check
   used_clips.md). Each Short belongs to ONE campaign: its own hashtags, credit, CTA, platforms.
   For a Kick or Twitch candidate copy `source`, `source_url` and `source_page` (= candidate url) into
@@ -142,9 +142,8 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   montage.py; writer.py check fails if it is missing. NO links/URLs anywhere (no_links): never
   put a URL in title, description, captions or first comment. Long streams (9-12 h): if the
   scan is slow, run `clips.py scan --campaign kreekcraft` on its own.
-- Dylan Page: only his GTA 6 marathon (YouTube, from 2026-11-19, ends ~2026-11-24). Until it
-  ends, prefer a Dylan moment in at least one slot per day; after it ends set `active` to false.
-  Dylan must be on screen/heard for the whole clip. 10,000 views minimum per post: only strong moments.
+- Dylan Page: PAUSED by the owner (active false: 10,000 views minimum per post is too high while
+  the channel is new). Do not clip him unless the owner reactivates it.
 - Bobby VanRiper (bobby_vanriper) streams on Twitch: clips.py lists his most viewed Twitch clips
   since `eligible_from`; Twitch does not tell the game, so check transcript/frames: only GTA VI
   gameplay (not his IRL Miami / NBA game / Fortnite streams). YouTube, TikTok and Instagram.
