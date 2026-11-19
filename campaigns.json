@@ -36,13 +36,8 @@
   "cta_overlay": "SUBSCRIBE TO TOMO\nON YOUTUBE @TOMOVIDS",
   "disclosure": "",
   "layout": "facecam",
-  "facecam": [
-   0.7,
-   0.43,
-   0.245,
-   0.31
-  ],
-  "gameplay": null,
+  "facecam": [0.735, 0.53, 0.265, 0.47],
+  "gameplay": [0.0, 0.0, 0.735, 1.0],
   "brief": [
    "Feature Tomo; source mainly his GTA VI YouTube livestreams or GTA VI videos. Priority: funny moments and first reactions to GTA VI (new features, cars, places, missions), stunts, chases, fails, interactions.",
    "One clear moment; cut anything that needs more than a few seconds of context. Hook in the first 2 seconds.",
