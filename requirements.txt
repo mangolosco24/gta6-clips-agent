@@ -1,0 +1,7 @@
+requests
+# [default] adds yt-dlp-ejs; deno is the JS runtime YouTube's challenges need
+yt-dlp[default]
+deno
+faster-whisper
+# faster-whisper 1.2 calls av.open(metadata_errors=...), removed in newer PyAV
+av<16
