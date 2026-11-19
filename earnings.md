@@ -14,3 +14,4 @@ Cross-posts: one row per platform (yt / tiktok / ig in the "short" column), each
 | 2026-11-19 | dom_gta6_crib_renovation | dom | yt | yes | n/a |
 | 2026-11-19 | dylan_gta6_respray_cops | dylanpage | yt | no | no |
 | 2026-11-19 | tomo_gta6_graphics_unreal | tomo | yt | no | no |
+| 2026-11-20 | dom_gta6_toxic_karen | dom | yt scheduled 01:00 | no | no |

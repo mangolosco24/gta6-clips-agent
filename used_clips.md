@@ -12,3 +12,4 @@ so the same moment is never posted twice.
 | 2026-11-19 | dom_gta6_crib_renovation | clip_01M7QQSD4Q1T3K0VKJDN06AQ8T | 0.1-38.8 | Dasgas Dom fixes up his own crib in GTA 6 | yt scheduled 17:00 https://youtube.com/shorts/FxmHHpNZ53o |
 | 2026-11-19 | dylan_gta6_respray_cops | akHGlswhaYI | 13524-13546 | Dylan Page tries to lose the cops in GTA 6 with a new paint job | yt scheduled 20:55 https://youtube.com/shorts/kGRzrzOh2aI |
 | 2026-11-19 | tomo_gta6_graphics_unreal | ktjcN5jasro | 4736.5-4766 | Tomo can't believe the GTA 6 graphics are real | yt scheduled 23:00 https://youtube.com/shorts/65w64UXQ5y0 |
+| 2026-11-20 | dom_gta6_toxic_karen | clip_01M7QXX0YW649GW35PR17MYTNT | 10.8-30.5 | A GTA 6 Karen told Dasgas Dom his phone had toxic energy | yt scheduled 01:00 https://youtube.com/shorts/mmKOlsLqbbA |
