@@ -25,6 +25,13 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    Then `.venv\Scripts\python engager.py pending` (first comment on Shorts that went public since).
 3. Read `performance.md` (what performed best so far). Candidates:
    `.venv\Scripts\python clips.py scan` -> `output\candidates.json`. Read it.
+   Run the scan in the FOREGROUND and wait for it (timeout up to 30 min; if it is slow, scan one
+   campaign at a time with `--campaign`). NEVER start it in the background and end your turn:
+   a scheduled run that ends its turn while waiting is closed, and the slot stays empty.
+   Chat spikes can be fake moments (the streamer asking chat to type something, giveaways,
+   polls): always check in the transcript that the window is a real gameplay moment/reaction.
+   Long streams have no captions: transcribe a candidate window before choosing it, e.g.
+   download only that section's audio with yt-dlp `--download-sections` and run faster-whisper.
    Pick ONE moment following `RULES` in `writer.py`: funny/high-energy/story with setup and payoff,
    streamer is the focus, no spoilers/leaks/isolated cutscenes/cheats, not overlapping
    used_clips.md (`already_used_overlap` must be false). Use the transcript timestamps to choose an
