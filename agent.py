@@ -18,6 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 import montage  # noqa: E402
+import qa  # noqa: E402
 import transcribe  # noqa: E402
 from writer import campaigns, seconds, validate  # noqa: E402
 
@@ -132,12 +133,21 @@ def share(files):
 def build(d, script):
     camp = campaigns()[script["campaign"]]
     src = download(script, d)
+    problems = qa.check(src, final=False)
+    if problems:
+        sys.exit("QA FAILED on the source cut (do not publish):\n- " + "\n- ".join(problems))
     log("transcribing (faster-whisper)")
     words = transcribe.words(src, os.path.join(d, "words.json"))
     total = min(duration(src), seconds(script["end"]) - seconds(script["start"]), 59.0)
     name = f"short_{script['slug']}.mp4"
     log(f"montage ({script.get('layout') or camp.get('layout')}, {total:.1f}s)")
     montage.render(d, src, words, script, camp, name, total)
+    problems = qa.check(os.path.join(d, name), expected=total)
+    if problems:
+        os.replace(os.path.join(d, name), os.path.join(d, f"FAILED_QA_{name}"))
+        sys.exit("QA FAILED on the Short (renamed FAILED_QA_..., do not publish):\n- "
+                 + "\n- ".join(problems))
+    log("QA OK (audio/video in sync, no timestamp jumps, 30 fps, 1080x1920)")
     txt = os.path.join(d, f"short_{script['slug']}_upload.txt")
     open(txt, "w", encoding="utf-8").write(upload_text(script, camp))
     share([os.path.join(d, name), txt])

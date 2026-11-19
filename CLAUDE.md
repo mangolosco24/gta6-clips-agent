@@ -112,6 +112,17 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   ends with `--slot HH:MM` (the owner is there to submit within 30 min). Late night Rome is US
   prime time, good for Tier 1. Still at most 1 extra per day unless the owner insists.
 
+## Quality gates (never skip)
+- agent.py runs qa.py on the source cut and on the finished Short (audio/video same length and
+  start, no timestamp jumps = no freeze/desync, constant 30 fps, 1080x1920). If it prints
+  "QA FAILED", the Short is renamed FAILED_QA_... : NEVER schedule or send it. Try another
+  moment (or re-download the source); tell the owner if the slot is skipped.
+- After ANY change to the code (new feature, fix, refactor): run `.venv\Scripts\python selftest.py`
+  and only commit/push if it ends with "ALL TESTS PASSED". It renders a synthetic clip with
+  flashes and beeps through every montage feature and checks A/V sync within one frame, checks
+  that qa.py catches a 2 s timestamp jump, and tests slots, captions and campaign rules.
+  When adding a feature, add a test for it in selftest.py.
+
 ## Rules
 - Never clip a streamer that is not in an active campaign in campaigns.json.
 - Respect every line of the campaign's `brief` in campaigns.json and Rockstar's rules:
