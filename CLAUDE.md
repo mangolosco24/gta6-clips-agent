@@ -68,7 +68,8 @@ AUTO POSTING MODE (only if settings.json has "posting_mode": "auto" AND YouTube 
 client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN):
 - step 7 becomes: schedule the YouTube upload for THIS run's slot with
   `.venv\Scripts\python publisher.py output\<slug> --slot 20:00` (the slot's Rome time; it is
-  converted to UTC automatically). Never publish immediately: the owner must be able to
+  converted to UTC automatically; if less than 20 min are left it moves to the same time
+  TOMORROW: say so clearly in the final message). Never publish immediately: the owner must be able to
   submit the link to the campaign within 30 minutes of the Short going public, so it must go
   public exactly at the slot time the owner expects.
 - still send mp4 + _upload.txt (for TikTok/Instagram, which stay manual) and copy to Drive.
