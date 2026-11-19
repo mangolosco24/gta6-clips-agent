@@ -215,7 +215,7 @@ def main():
     elif a.cmd == "inbox":
         print(json.dumps(inbox(token, a.days, a.max), indent=1, ensure_ascii=False))
     elif a.cmd == "reply":
-        post_replies(json.load(open(a.file, encoding="utf-8")), token)
+        post_replies(json.load(open(a.file, encoding="utf-8-sig")), token)  # PowerShell adds a BOM
     elif a.cmd == "auto":
         comments = inbox(token, a.days, a.max)
         if not comments:
