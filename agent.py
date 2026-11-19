@@ -77,7 +77,10 @@ def social_caption(s, camp, extra_tags, limit=6):
         if t and t.lower() not in (x.lower() for x in tags):
             tags.append(t)
     cta = camp.get("required_text") or f"Watch more from {camp['streamer']}: {camp['credit']}"
-    return f"{s['title']}\n\n{cta}\n\n" + " ".join("#" + t for t in tags[:limit])
+    # searchable keywords: TikTok search weighs caption text (no links: some campaigns forbid them)
+    kw = [k for k in (s.get("tags") or [])[:2]] + [f"{camp['streamer']} GTA 6", "GTA 6 funny moments"]
+    keywords = " | ".join(dict.fromkeys(k for k in kw if k))
+    return f"{s['title']}\n\n{keywords}\n\n{cta}\n\n" + " ".join("#" + t for t in tags[:limit])
 
 
 def source_link(s):

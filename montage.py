@@ -31,7 +31,7 @@ def _censor(t):
 
 
 def _chunks(words):
-    """Group words into 1-3 word caption chunks with start/end times."""
+    """Group words into 1-3 word caption chunks: (start, end, [words])."""
     out, cur = [], []
     for i, w in enumerate(words):
         cur.append(w)
@@ -42,23 +42,42 @@ def _chunks(words):
             end = w["end"] + 0.25
             if nxt:
                 end = min(max(end, nxt["start"] - 0.05), nxt["start"])
-            out.append((cur[0]["start"], max(end, cur[0]["start"] + 0.3), text))
+            out.append((cur[0]["start"], max(end, cur[0]["start"] + 0.3), cur))
             cur = []
     return out
 
 
-def subtitles(words, hook, highlights, credit, layout, total, path, cta=""):
-    cap_y = 1330 if layout == "blur" else 1180
+# Visual presets, picked per Short from its slug: platforms push down clips that all look like
+# the same template, so colour, caption size/position and hook box vary between posts.
+# Colours are ASS &HAABBGGRR.
+STYLES = [
+    {"accent": "&H0000D7FF", "size": 84, "dy": 0, "hook_back": "&H30000000"},   # yellow
+    {"accent": "&H005AFF4C", "size": 88, "dy": -50, "hook_back": "&H00000000"},  # green
+    {"accent": "&H00FFE500", "size": 80, "dy": 40, "hook_back": "&H40000000"},   # cyan
+    {"accent": "&H00A040FF", "size": 86, "dy": -20, "hook_back": "&H10000000"},  # pink
+    {"accent": "&H000096FF", "size": 82, "dy": 25, "hook_back": "&H30000000"},   # orange
+]
+
+
+def style_for(slug):
+    import zlib
+    return STYLES[zlib.crc32(slug.encode()) % len(STYLES)]
+
+
+def subtitles(words, hook, highlights, credit, layout, total, path, cta="", style=None):
+    st = style or STYLES[0]
+    cap_y = (1330 if layout == "blur" else 1180) + st["dy"]
+    acc = st["accent"]
     hdr = f"""[Script Info]
 PlayResX: {W}
 PlayResY: {H}
 WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,{FONT},84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,7,3,5,70,70,0,1
-Style: Hook,{FONT},70,&H00FFFFFF,&H00FFFFFF,&H00000000,&H30000000,-1,0,0,0,100,100,0,0,3,16,0,8,70,70,170,1
+Style: Cap,{FONT},{st['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,7,3,5,70,70,0,1
+Style: Hook,{FONT},70,&H00FFFFFF,&H00FFFFFF,&H00000000,{st['hook_back']},-1,0,0,0,100,100,0,0,3,16,0,8,70,70,170,1
 Style: Credit,Arial,40,&H30FFFFFF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,3,1,5,60,60,0,1
-Style: Cta,{FONT},62,&H0000D7FF,&H00FFFFFF,&H00000000,&H30000000,-1,0,0,0,100,100,0,0,3,16,0,8,70,70,170,1
+Style: Cta,{FONT},62,{acc},&H00FFFFFF,&H00000000,&H30000000,-1,0,0,0,100,100,0,0,3,16,0,8,70,70,170,1
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
@@ -72,17 +91,29 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     if credit:
         ev.append(f"Dialogue: 1,{_ts(0)},{_ts(total)},Credit,,0,0,0,,"
                   f"{{\\pos(540,{cap_y + 150})}}via {_clean(credit)}")
-    hl = sorted({re.escape(x.strip(".,!?").upper()) for h in highlights for x in h.split() if x.strip(".,!?")},
-                key=len, reverse=True)
-    hl_re = re.compile(r"(?<![\w'])(" + "|".join(hl) + r")(?![\w'])") if hl else None
-    for a, b, text in _chunks(words):
+    hl = {x.strip(".,!?").upper() for h in highlights for x in h.split() if x.strip(".,!?")}
+    acc = "&H" + acc[4:]  # inline \c takes &HBBGGRR (no alpha byte)
+    for a, b, ws in _chunks(words):
         if a >= total:
             break
-        txt = _censor(_clean(text)).upper()
-        if hl_re:
-            txt = hl_re.sub(r"{\\c&H00D7FF&}\1{\\c&HFFFFFF&}", txt)
-        ev.append(f"Dialogue: 0,{_ts(a)},{_ts(min(b, total))},Cap,,0,0,0,,"
-                  f"{{\\pos(540,{cap_y})\\fscx88\\fscy88\\t(0,80,\\fscx100\\fscy100)}}{txt}")
+        # karaoke: the chunk stays on screen, the word being spoken lights up in the accent colour
+        texts = [_censor(_clean(w["w"])).upper() for w in ws]
+        for j, w in enumerate(ws):
+            s = a if j == 0 else w["start"]
+            e = ws[j + 1]["start"] if j + 1 < len(ws) else b
+            if s >= total or e <= s:
+                continue
+            parts = []
+            for k, t in enumerate(texts):
+                if k == j:
+                    parts.append(f"{{\\c{acc}&}}{t}{{\\c&HFFFFFF&}}")
+                elif t.strip(".,!?") in hl:
+                    parts.append(f"{{\\c{acc}&\\alpha&H40&}}{t}{{\\c&HFFFFFF&\\alpha&H00&}}")
+                else:
+                    parts.append(t)
+            pop = "\\fscx88\\fscy88\\t(0,80,\\fscx100\\fscy100)" if j == 0 else ""
+            ev.append(f"Dialogue: 0,{_ts(s)},{_ts(min(e, total))},Cap,,0,0,0,,"
+                      f"{{\\pos(540,{cap_y}){pop}}}{' '.join(parts)}")
     with open(path, "w", encoding="utf-8") as f:
         f.write(hdr + "\n".join(ev) + "\n")
 
@@ -129,7 +160,7 @@ def render(d, src, words, script, campaign, out_name, total):
     gameplay = script.get("gameplay") or campaign.get("gameplay")
     subtitles(words, script.get("hook_text", ""), script.get("highlight_words", []),
               campaign.get("credit", ""), layout, total, os.path.join(d, "subs.ass"),
-              campaign.get("cta_overlay", ""))
+              campaign.get("cta_overlay", ""), style_for(script.get("slug", "")))
     vf = video_filter(layout, float(script.get("zoom", 1.25)), facecam, gameplay)
     inputs = ["-i", os.path.basename(src)]
     logo = campaign.get("logo")

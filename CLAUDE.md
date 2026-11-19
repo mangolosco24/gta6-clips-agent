@@ -44,9 +44,12 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
 5. Render: `.venv\Scripts\python agent.py --script scripts\<slug>.json`.
 6. Check: `.venv\Scripts\python agent.py --frames output\<slug>` and look at the frames:
    captions readable and not covering the action, credit visible, hook readable, the moment makes
-   sense. `src_frame.jpg` is the raw source: if the streamer has a facecam, you may switch to
-   `"layout": "facecam"` with `facecam`/`gameplay` rectangles as fractions [x, y, w, h], and save
-   them in campaigns.json for next time. Fix `output\<slug>\script.json` and run
+   sense. `src_frame.jpg` is the raw source: if the streamer has a webcam on screen, ALWAYS use
+   `"layout": "facecam"` (cam on top, game below: the streamer's face filling the frame is what
+   stops the scroll) with `facecam`/`gameplay` rectangles as fractions [x, y, w, h] measured on
+   src_frame, and save them in campaigns.json for next time. Use "blur" only without a webcam.
+   Captions are karaoke (spoken word in the accent colour) and the visual style varies per slug
+   automatically: nothing to do. Fix `output\<slug>\script.json` and run
    `.venv\Scripts\python agent.py --resume output\<slug>`.
    Also read `output\<slug>\words.json`: if the clip starts or ends mid-sentence, adjust start/end.
 7. MANUAL POSTING MODE (default; see AUTO POSTING MODE below): the owner uploads by hand, at 17:00, 20:00 or 23:00 Rome (the
