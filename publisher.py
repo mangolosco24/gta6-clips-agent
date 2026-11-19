@@ -6,7 +6,8 @@
   python publisher.py --all                       # publish every Short not yet published
   python publisher.py output/barings --dry-run    # only write/print title, description, tags
   python publisher.py output/barings --privacy private --at 2026-11-18T17:00:00Z
-  python publisher.py output/barings --slot auto  # next free slot: 14:00 or 18:00 Rome time
+  python publisher.py output/<slug> --slot auto   # next free slot: 17:00, 20:00 or 23:00 Rome time
+  python publisher.py output/<slug> --at 2026-11-20T19:00:00Z  # exact slot (UTC)
 
 Needs YT_CLIENT_ID, YT_CLIENT_SECRET and (after --auth) YT_REFRESH_TOKEN.
 Writes output/<slug>/youtube.json with the video id, so a Short is never uploaded twice.
@@ -33,7 +34,7 @@ UPLOAD_URL = "https://www.googleapis.com/upload/youtube/v3/videos"
 CATEGORY_GAMING = "20"
 TOKEN_FILE = os.path.join(HERE, "youtube_token.json")
 # Daily publishing slots (local time). Shorts are uploaded as scheduled and go public then.
-SLOTS = ["14:00", "18:00"]
+SLOTS = ["17:00", "20:00", "23:00"]  # same slots as the scheduled tasks (US-friendly)
 SLOT_TZ = "Europe/Rome"
 MIN_LEAD = dt.timedelta(minutes=20)  # YouTube needs publishAt a bit in the future
 

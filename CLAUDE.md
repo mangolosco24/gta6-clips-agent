@@ -41,7 +41,7 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    them in campaigns.json for next time. Fix `output\<slug>\script.json` and run
    `.venv\Scripts\python agent.py --resume output\<slug>`.
    Also read `output\<slug>\words.json`: if the clip starts or ends mid-sentence, adjust start/end.
-7. MANUAL POSTING MODE (current): the owner uploads by hand, at 17:00, 20:00 or 23:00 Rome (the
+7. MANUAL POSTING MODE (default; see AUTO POSTING MODE below): the owner uploads by hand, at 17:00, 20:00 or 23:00 Rome (the
    scheduled task's prompt says which slot this run is for). Do NOT run
    publisher.py or engager.py. Send `output\<slug>\short_<slug>.mp4` and
    `short_<slug>_upload.txt` (copy-paste ready title, description with credit and hashtags, first
@@ -64,9 +64,18 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    - remind to send the audience country breakdown on the Clipping Nation Discord for Shorts
      that passed 2,000 views (rows of earnings.md with analytics not sent, older than ~2 days).
 
-(Automatic mode, only if the owner later sets up YouTube credentials: publish with
-`.venv\Scripts\python publisher.py output\<slug> --privacy public`, then
-`.venv\Scripts\python engager.py first output\<slug>`.)
+AUTO POSTING MODE (only if settings.json has "posting_mode": "auto" AND YouTube credentials exist:
+client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN):
+- step 7 becomes: schedule the YouTube upload for THIS run's slot with
+  `.venv\Scripts\python publisher.py output\<slug> --at <slot time in UTC, e.g. 2026-11-20T16:00:00Z>`
+  (Rome is UTC+1 in winter, UTC+2 in summer). Never publish immediately: the owner must be able to
+  submit the link to the campaign within 30 minutes of the Short going public, so it must go
+  public exactly at the slot time the owner expects.
+- still send mp4 + _upload.txt (for TikTok/Instagram, which stay manual) and copy to Drive.
+- the first comment cannot be posted on a scheduled video: the next run's
+  `engager.py pending` posts it (step 2).
+- final message: "Esce su YouTube alle HH:MM: invia il link <youtube url> alla campagna entro le
+  HH:MM+30", plus TikTok/Instagram instructions as in step 9.
 
 ## Rules
 - Never clip a streamer that is not in an active campaign in campaigns.json.

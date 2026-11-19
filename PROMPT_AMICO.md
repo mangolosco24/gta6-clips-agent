@@ -44,11 +44,26 @@ Fai così:
    `agent.py --frames ...`, guarda i frame e mandami mp4 e _upload.txt. NON pubblicare nulla
    tu: la pubblicazione è manuale (MANUAL POSTING MODE in CLAUDE.md).
 
+5b. Pubblicazione automatica su YouTube (io la uso già con shorts-agent): riusa il mio progetto
+   Google Cloud e il client OAuth "App desktop" già pubblicato. Guidami a:
+   - mettere il JSON del client (client_secret*.json) in questa cartella, oppure impostare
+     YT_CLIENT_ID e YT_CLIENT_SECRET come variabili d'ambiente sul PC;
+   - lanciare `.venv\Scripts\python publisher.py --auth` e scegliere il NUOVO canale GTA (non
+     quello vecchio): il token viene salvato in youtube_token.json, solo sul PC;
+   - mettere "posting_mode": "auto" in settings.json.
+   Da quel momento si usa la AUTO POSTING MODE di CLAUDE.md: lo Short viene caricato su YouTube
+   programmato esattamente all'orario dello slot, e io devo solo inviare il link alla campagna
+   entro 30 minuti da quell'orario (più TikTok/Instagram a mano). Anche le risposte ai commenti
+   diventano automatiche. Tutto gira sul mio PC, non nel cloud: YouTube blocca spesso i download
+   dai server.
+
 6. Crea i task pianificati dell'app desktop (modalità che ti indico io), uno per slot, che
-   eseguono la "Daily routine" di CLAUDE.md in MANUAL POSTING MODE:
-   - ore 16:00 -> Short da pubblicare alle 17:00
-   - ore 19:00 -> Short da pubblicare alle 20:00
-   - ore 22:00 -> Short da pubblicare alle 23:00
+   eseguono la "Daily routine" di CLAUDE.md in AUTO POSTING MODE (o MANUAL se il token YouTube
+   non è ancora pronto):
+   - ore 16:00 -> Short che esce alle 17:00
+   - ore 19:00 -> Short che esce alle 20:00
+   - ore 22:00 -> Short che esce alle 23:00
+   In AUTO il task lo programma su YouTube per quell'orario e mi avvisa con il link da inviare.
    Ogni task: momenti mai già in used_clips.md, campagne alternate a parità di qualità, salta lo
    slot se non c'è niente di buono; alla fine mi scrive per quale campagna è, titolo, durata,
    piattaforme (TikTok sempre, Instagram solo se la campagna lo prevede), "invia ogni link entro

@@ -12,7 +12,7 @@ Adattato da [sniff3er/shorts-agent](https://github.com/sniff3er/shorts-agent).
 | `agent.py` | Scarica solo lo spezzone, trascrive, monta, estrae i frame di controllo |
 | `transcribe.py` | Sottotitoli parola per parola con faster-whisper (locale, gratis) |
 | `montage.py` | 1080x1920: video su sfondo sfocato o facecam sopra/gioco sotto, hook, credito, volume |
-| `publisher.py` | Carica su YouTube nello slot libero delle 14:00 o 18:00 (ora di Roma) |
+| `publisher.py` | Carica su YouTube (programmato per lo slot delle 17:00, 20:00 o 23:00 di Roma) |
 | `engager.py` | Primo commento e risposte ai commenti |
 | `used_clips.md` / `earnings.md` | Clip già usate / Short da inviare alla campagna |
 | `CLAUDE.md` | Routine giornaliera che Claude esegue |
