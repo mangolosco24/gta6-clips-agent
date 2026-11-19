@@ -10,3 +10,4 @@ so the same moment is never posted twice.
 | 2026-11-19 | tomo_gta6_silent_disco | XRo2L3077NI | 3465-3491.5 | Tomo muted the club music in GTA 6... so it became a silent disco | manual |
 | 2026-11-19 | dom_gta6_gas_price | clip_01M7QFFZQQ81WKQPF82NW5816R | 8.8-38.6 | Dasgas Dom pays $44 for gas in GTA 6... then robs the store | manual |
 | 2026-11-19 | dom_gta6_crib_renovation | clip_01M7QQSD4Q1T3K0VKJDN06AQ8T | 0.1-38.8 | Dasgas Dom fixes up his own crib in GTA 6 | yt scheduled 17:00 https://youtube.com/shorts/FxmHHpNZ53o |
+| 2026-11-19 | dylan_gta6_respray_cops | akHGlswhaYI | 13524-13546 | Dylan Page tries to lose the cops in GTA 6 with a new paint job | yt scheduled 20:55 https://youtube.com/shorts/kGRzrzOh2aI |

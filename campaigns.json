@@ -148,9 +148,9 @@
   "required_text": "",
   "cta_overlay": "",
   "disclosure": "",
-  "layout": "blur",
-  "facecam": null,
-  "gameplay": null,
+  "layout": "facecam",
+  "facecam": [0.685, 0.16, 0.31, 0.29],
+  "gameplay": [0.0, 0.0, 0.7, 1.0],
   "brief": [
    "Footage ONLY from Dylan Page's GTA 6 marathon starting 19 November 2026 (streams, VODs and clips of the marathon), live on YouTube: 'FIRST TO BEAT GTA 6 (By Cheating) | DAY n'. Campaign ends with the marathon (~24 Nov): give Dylan priority in the slots until then.",
    "The marathon theme is beating the story with the game's own cheat codes: that is fine to show. Never show or explain hacks, mods, exploits or anything that breaks the game for others.",
