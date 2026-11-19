@@ -232,6 +232,11 @@ def next_slot(taken, now=None):
     sys.exit("no free slot in the next 14 days")
 
 
+def slot_taken(at, taken, window=dt.timedelta(minutes=60)):
+    t = _utc(at)
+    return any(abs(t - x) < window for x in taken)
+
+
 def slot_at(hhmm, now=None):
     """Next occurrence (UTC, RFC3339) of HH:MM Rome time, at least MIN_LEAD from now."""
     from zoneinfo import ZoneInfo
@@ -327,6 +332,8 @@ def publish(d, a, token=None):
     elif a.slot and not a.at:
         a.at = slot_at(a.slot)
         log(f"slot {a.slot} Rome: {a.at}")
+        if slot_taken(a.at, taken_times(token)):
+            sys.exit(f"SLOT TAKEN: a Short is already scheduled/published around {a.at}; not uploading")
     log(f"uploading {slug} ({os.path.getsize(video) / 1e6:.1f} MB, "
         f"{'scheduled ' + a.at if a.at else a.privacy})")
     vid = upload(video, meta, a.privacy, a.at, token)
@@ -349,12 +356,20 @@ def main():
     ap.add_argument("--slot", help="'auto' = next free daily slot (SLOTS), or 'HH:MM' Rome time "
                                    "(e.g. 20:00 = next 20:00 Rome)")
     ap.add_argument("--dry-run", action="store_true", help="only build title/description/tags")
+    ap.add_argument("--check-slot", metavar="HH:MM",
+                    help="print FREE or TAKEN for the next HH:MM Rome slot, then exit")
     ap.add_argument("--test-calendar", action="store_true",
                     help="create a test reminder event 3 minutes from now")
     a = ap.parse_args()
 
     if a.auth:
         return auth_flow()
+    if a.check_slot:
+        at = slot_at(a.check_slot)
+        taken = slot_taken(at, taken_times(access_token()))
+        local = _utc(at).astimezone(__import__("zoneinfo").ZoneInfo(SLOT_TZ)).strftime("%Y-%m-%d %H:%M")
+        print(f"{'TAKEN' if taken else 'FREE'} {local} Rome ({at})")
+        return
     if a.test_calendar:
         at = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
         test = {"campaign": next(iter(__import__("writer").campaigns())), "title": "TEST promemoria"}

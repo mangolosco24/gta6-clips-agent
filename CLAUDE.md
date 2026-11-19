@@ -66,6 +66,15 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
 
 AUTO POSTING MODE (only if settings.json has "posting_mode": "auto" AND YouTube credentials exist:
 client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN):
+- FIRST, before anything else: `.venv\Scripts\python publisher.py --check-slot HH:MM` for this
+  run's slot. If it prints TAKEN, a Short is already scheduled for that slot (e.g. the owner asked
+  to prepare the day in the morning, or a missed run already filled it): stop, change nothing,
+  final message one line "Slot HH:MM già occupato, niente da fare". If the slot it prints is
+  TOMORROW (the PC was off and today's slot has passed), go on: it prepares tomorrow's slot.
+- Runs can overlap (tasks 45 min apart, or several missed runs starting together when the PC is
+  turned on): if output\run.lock exists and is less than 60 min old, wait (check every 3 min, up
+  to 45 min) before scanning; create output\run.lock when you start and delete it when you finish.
+  Re-read used_clips.md right before choosing, so two runs never pick the same moment.
 - step 7 becomes: schedule the YouTube upload for THIS run's slot with
   `.venv\Scripts\python publisher.py output\<slug> --slot 20:00` (the slot's Rome time; it is
   converted to UTC automatically; if less than 20 min are left it moves to the same time
@@ -81,6 +90,12 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   "calendar_reminders": true) with the YouTube link and the campaign link, so the owner's phone
   pops up a reminder. If the log says "calendar reminder not created", mention it in the final message.
   (remind.py prints the same text; app push notifications do not work from scheduled runs.)
+
+## Owner requests outside the schedule
+- "Prepara gli Short di oggi adesso" (e.g. in the morning, when the afternoon is busy): run the
+  AUTO routine once per slot (17:00, 20:00, 23:00), one after the other, each with its own
+  --check-slot and --slot. The afternoon tasks will then find the slots TAKEN and skip.
+- "Salta oggi": nothing to do; or if some slots are already scheduled, tell the owner which.
 
 ## Rules
 - Never clip a streamer that is not in an active campaign in campaigns.json.
