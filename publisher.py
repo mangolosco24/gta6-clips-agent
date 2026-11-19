@@ -43,6 +43,10 @@ MIN_LEAD = dt.timedelta(minutes=20)  # YouTube needs publishAt a bit in the futu
 # Channel-wide hashtags: always present, after the clip-specific ones.
 BASE_TAGS = ["shorts", "gta6", "gtavi", "gaming", "gta"]
 CTA = "Follow for the best GTA 6 stream moments every day."
+# Hidden YouTube tags, 3 levels ("viral tags formula"): post-specific (script "tags"),
+# niche (GTA 6 / streamer clips + the streamer's name) and broad.
+NICHE_TAGS = ["gta 6", "gta 6 funny moments", "gta 6 gameplay", "gta 6 streamer clips"]
+BROAD_TAGS = ["viral", "shorts", "viral shorts", "fyp"]
 
 
 def log(msg):
@@ -97,8 +101,11 @@ def build_metadata(script):
     parts.append(CTA)
     hashtag_line = " ".join("#" + t for t in tags)
     description = "\n\n".join(parts) + f"\n\n{hashtag_line}"
-    # "tags" field: hidden keywords (max 500 chars total)
-    keywords = tags + [w for w in script["slug"].split("_") if len(w) > 2]
+    # "tags" field: hidden keywords (max 500 chars total), post-specific > niche > broad
+    post = [t.strip().lower() for t in script.get("tags", []) if t.strip()][:4]
+    streamer = camp.get("streamer", "").lower()
+    niche = NICHE_TAGS + ([f"{streamer} gta 6", f"{streamer} clips"] if streamer else [])
+    keywords = post + niche + BROAD_TAGS + [t.lower() for t in tags if t.lower() != "shorts"]
     keywords, total = list(dict.fromkeys(keywords)), 0
     kept = []
     for k in keywords:

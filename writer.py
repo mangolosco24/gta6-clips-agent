@@ -10,7 +10,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-MIN_LEN, MAX_LEN = 15, 45  # seconds; short clips get higher completion rate (prefer 20-35)
+MIN_LEN, MAX_LEN = 12, 35  # seconds; prefer 15-25: higher "viewed vs swiped away" and completion
 
 SCHEMA = {
     "slug": "short snake_case name, unique (e.g. tomo_police_chase_fail)",
@@ -20,7 +20,8 @@ SCHEMA = {
     "source_url": "only for Kick: the clip's playlist URL (candidate source_url)",
     "source_page": "only for Kick: the clip page URL (candidate url), shown as source",
     "start": "clip start in the source, seconds or 'h:mm:ss'",
-    "end": "clip end in the source, seconds or 'h:mm:ss' (15-45 s after start, prefer 20-35)",
+    "end": "clip end in the source, seconds or 'h:mm:ss' (12-35 s after start, prefer 15-25)",
+    "tags": "3-4 post-specific search phrases describing exactly this clip (e.g. 'dom gta 6 gas station robbery'); niche and broad tags are added automatically",
     "layout": "optional: 'blur' (16:9 video on blurred background) or 'facecam' (cam on top, game below); default from campaigns.json",
     "zoom": "optional, blur layout only: 1.0-1.5, default 1.25",
     "facecam": "optional [x, y, w, h] as fractions 0-1 of the source frame; required for layout 'facecam'",
@@ -40,7 +41,11 @@ Picking the moment:
   the stream must understand it, but keep setup to 1-3 s: start as close to the action as
   possible (cold open), end right after the reaction (do not let it trail off). An ending that
   flows back into the start (loop) is a bonus.
-- 15-45 seconds, prefer 20-35: completion rate decides how far a Short travels.
+- 12-35 seconds, prefer 15-25: the share of people who stop instead of swiping away (aim > 70%)
+  and the completion rate decide how far a Short travels. Go above 25 s only if the moment
+  really needs it; cut any setup the payoff does not need.
+- The first 1-2 seconds must stop the scroll: start on the most intriguing line or action, and
+  make hook_text tease the payoff.
 - Read performance.md first and favour the kind of moment that performed best so far.
 - Never: leaked footage, story spoilers, an isolated cutscene or in-game TV/radio show posted on
   its own, hacks/mods/exploit tutorials, drama bait, anything hateful or sexual, a clip already in
