@@ -6,7 +6,11 @@
   "campaign_url": "https://contentrewards.com/c/campaigns/df6de26f-86ec-4782-b818-1fc8053b99a4",
   "pay": "$2.00 / 1K views, min 2,000 views, max $150 per video, Content Rewards keeps 10%",
   "submit_within_minutes": 30,
-  "platforms": ["youtube", "tiktok", "instagram"],
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
   "streamer": "Tomo",
   "credit": "@Tomovids",
   "channel_url": "https://www.youtube.com/@Tomovids",
@@ -36,8 +40,18 @@
   "cta_overlay": "SUBSCRIBE TO TOMO\nON YOUTUBE @TOMOVIDS",
   "disclosure": "",
   "layout": "facecam",
-  "facecam": [0.735, 0.53, 0.265, 0.47],
-  "gameplay": [0.0, 0.0, 0.735, 1.0],
+  "facecam": [
+   0.735,
+   0.53,
+   0.265,
+   0.47
+  ],
+  "gameplay": [
+   0.0,
+   0.0,
+   0.735,
+   1.0
+  ],
   "brief": [
    "Feature Tomo; source mainly his GTA VI YouTube livestreams or GTA VI videos. Priority: funny moments and first reactions to GTA VI (new features, cars, places, missions), stunts, chases, fails, interactions.",
    "One clear moment; cut anything that needs more than a few seconds of context. Hook in the first 2 seconds.",
@@ -57,7 +71,10 @@
   "campaign_url": "https://contentrewards.com/c/campaigns/051002dd-5c46-43d0-a446-43f2957ba3a9",
   "pay": "$2.00 / 1K views (CPM raised; listing: min $10 = 5,000 views, max $150 per post). Content Rewards keeps 10%. Two posts never combine.",
   "submit_within_minutes": 30,
-  "platforms": ["youtube", "tiktok"],
+  "platforms": [
+   "youtube",
+   "tiktok"
+  ],
   "platform": "kick",
   "kick_channel": "dasgasd3m",
   "eligible_from": "2026-11-18",
@@ -67,14 +84,33 @@
   "watch_more": "Watch him live:",
   "sources": [],
   "title_keywords": [],
-  "required_hashtags": ["dasgasdom3"],
-  "optional_hashtags": ["gta6", "gtavi", "gaming", "funnymoments", "kick", "streamer"],
+  "required_hashtags": [
+   "dasgasdom3"
+  ],
+  "optional_hashtags": [
+   "gta6",
+   "gtavi",
+   "gaming",
+   "funnymoments",
+   "kick",
+   "streamer"
+  ],
   "required_text": "Watch Dom live on Kick: kick.com/dasgasd3m",
   "cta_overlay": "WATCH DOM LIVE\nKICK.COM/DASGASD3M",
   "disclosure": "",
   "layout": "facecam",
-  "facecam": [0.0, 0.0, 0.28, 0.4],
-  "gameplay": [0.28, 0.0, 0.72, 1.0],
+  "facecam": [
+   0.0,
+   0.0,
+   0.28,
+   0.4
+  ],
+  "gameplay": [
+   0.28,
+   0.0,
+   0.72,
+   1.0
+  ],
   "brief": [
    "Footage ONLY from Dom's (dasgasd3m) own GTA 6 story-mode streams on Kick from 18 November 2026 onwards (live or VOD, incl. Kick clips of those streams). Never: his streams from earlier days, anything he posted outside Kick, Rockstar trailers/screenshots/art, leaks, guests or songs his permission does not cover, other creators' work.",
    "Moments: story reactions (with SPOILER WARNING), glitches and fails, his jokes/impressions, chat exchanges, unexpected NPC/game details with a strong reaction. Keep setup, his real reaction and the payoff together; keep his face or voice.",
@@ -88,12 +124,16 @@
  },
  {
   "id": "bobby",
-  "active": false,
+  "active": true,
   "name": "BOBBY VAN RIPER GTA VI Clipping (Clipping Nation)",
   "campaign_url": "",
-  "pay": "$1.50 / 1K views on TikTok, Instagram and YouTube; min payout $2.25 (= 1,500 views), max $150 per post. Budget $1,000. Content Rewards keeps 10%.",
+  "pay": "$1.50 / 1K views on TikTok, Instagram and YouTube; min payout $2.25 (= 1,500 views), max $150 per post. Budget $1,000. Content Rewards keeps 10%. At 1,500 views: Discord 'Submit Demographics' ticket with a screen recording of the country breakdown (40% Tier 1).",
   "submit_within_minutes": 30,
-  "platforms": ["youtube", "tiktok", "instagram"],
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
   "platform": "twitch",
   "twitch_channel": "bobby_vanriper",
   "eligible_from": "2026-11-19",
@@ -103,19 +143,43 @@
   "watch_more": "Watch him live:",
   "sources": [],
   "title_keywords": [],
-  "required_hashtags": [],
-  "optional_hashtags": ["gta6", "gtavi", "gaming", "funnymoments", "twitch", "streamer"],
-  "required_text": "Watch Bobby live on Twitch: twitch.tv/bobby_vanriper",
-  "cta_overlay": "WATCH BOBBY LIVE\nTWITCH.TV/BOBBY_VANRIPER",
+  "required_hashtags": [
+   "bobbyvanriper"
+  ],
+  "optional_hashtags": [
+   "gta6",
+   "gtavi",
+   "twitch",
+   "streamer",
+   "twitchclips",
+   "gaming",
+   "funnymoments"
+  ],
+  "required_text": "Follow Bobby Vanriper on Twitch: twitch.tv/bobby_vanriper",
+  "cta_overlay": "FOLLOW BOBBY VANRIPER\nTWITCH.TV/BOBBY_VANRIPER",
   "disclosure": "",
   "layout": "facecam",
-  "facecam": [0.0, 0.28, 0.21, 0.27],
-  "gameplay": [0.18, 0.0, 0.62, 1.0],
+  "facecam": [
+   0.0,
+   0.28,
+   0.21,
+   0.27
+  ],
+  "gameplay": [
+   0.18,
+   0.0,
+   0.62,
+   1.0
+  ],
   "brief": [
-   "INCOMPLETE: paste the full campaign brief from Content Rewards ('Mostra di più') before using this campaign.",
-   "Footage only from Bobby VanRiper's own GTA VI streams on Twitch (twitch.tv/bobby_vanriper), incl. Twitch clips of those streams. Not his IRL / Miami / NBA game streams, not other games.",
-   "Keep his face or voice and his real reaction; credit him on screen.",
-   "Post on YouTube Shorts, TikTok and Instagram Reels; submit each link within 30 minutes."
+   "GTA VI only: footage ONLY from Bobby Vanriper's own GTA VI streams and videos (twitch.tv/bobby_vanriper, incl. the Clips tab). Never his IRL / Miami / NBA game / Fortnite streams: non-GTA VI clips are rejected. Bobby must be featured (face or voice).",
+   "Structure: hook in the first 2 seconds; ONE clear funny, crazy or surprising GTA VI moment; cut anything that needs more than a few seconds of context; CTA naming Bobby and where to watch him live ('follow Bobby Vanriper on Twitch').",
+   "Look for: funny and chaotic moments, first reactions to new features, cars, places and missions, crazy stunts, chases and fails, interactions with other players and characters. Priority: funny moments and first reactions.",
+   "Captions readable without sound, English only. Use #bobbyvanriper and show twitch.tv/bobby_vanriper on screen or in the caption. Mix the other hashtags between posts: #gta6 #gtavi #twitch #streamer #twitchclips #gaming #funnymoments.",
+   "English videos, at least 40% Tier 1 audience (USA, UK, Canada, Australia). Likes must be visible. Keep at least 1% engagement. Account in a gaming/streamer clips niche.",
+   "Never portray Bobby negatively. No clickbait, fake context, misleading titles, AI-generated content or thumbnails, low-effort screen recordings, reuploads, or bought/botted views. One great clip beats ten rushed ones.",
+   "Same or nearly identical clip at most 5 posts; make clips inspired by others meaningfully different. Keep every clip live for at least 30 days.",
+   "Platforms: YouTube Shorts, TikTok and Instagram Reels (cross-posting encouraged). Submit each link within 30 minutes of posting. Overlay optional (not used)."
   ]
  },
  {
@@ -125,7 +189,11 @@
   "campaign_url": "https://contentrewards.com/c/campaigns/2eaa14fb-6927-4136-897e-b096e0d907d6",
   "pay": "$1.00 / 1K views, max $300 per clip, budget $6,824.60. Content Rewards keeps 10%.",
   "submit_within_minutes": 30,
-  "platforms": ["youtube", "tiktok", "instagram"],
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
   "streamer": "KreekCraft",
   "credit": "KreekCraft on YouTube & Twitch",
   "channel_url": "",
@@ -134,13 +202,33 @@
    "https://www.youtube.com/@Kreek/streams",
    "https://www.youtube.com/@Kreek/videos"
   ],
-  "title_keywords": ["gta 6", "gta6", "gta vi", "grand theft auto vi", "grand theft auto 6"],
-  "required_hashtags": ["GTA6", "KreekCraft", "GrandTheftAutoVI"],
-  "optional_hashtags": ["gaming", "funnymoments", "gtavi", "streamer"],
+  "title_keywords": [
+   "gta 6",
+   "gta6",
+   "gta vi",
+   "grand theft auto vi",
+   "grand theft auto 6"
+  ],
+  "required_hashtags": [
+   "GTA6",
+   "KreekCraft",
+   "GrandTheftAutoVI"
+  ],
+  "optional_hashtags": [
+   "gaming",
+   "funnymoments",
+   "gtavi",
+   "streamer"
+  ],
   "required_text": "Watch KreekCraft on YouTube and Twitch!",
   "cta_overlay": "WATCH KREEKCRAFT\nON YOUTUBE AND TWITCH",
   "disclosure": "",
-  "logo": {"file": "assets/kreekcraft_logo.png", "width": 600, "x": "(W-w)/2", "y": "0"},
+  "logo": {
+   "file": "assets/kreekcraft_logo.png",
+   "width": 600,
+   "x": "(W-w)/2",
+   "y": "0"
+  },
   "layout": "blur",
   "facecam": null,
   "gameplay": null,
@@ -161,7 +249,11 @@
   "campaign_url": "https://contentrewards.com/c/campaigns/39753a1a-f1f3-491b-a8f6-0cfee0af0c97",
   "pay": "$1.00 / 1K views on every platform, min $10 (= 10,000 views on one post), max $250 per clip, budget $5,000. Content Rewards keeps 10%. Campaign ends when the 120-hour marathon ends (~24 Nov 2026).",
   "submit_within_minutes": 30,
-  "platforms": ["youtube", "tiktok", "instagram"],
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
   "streamer": "Dylan Page",
   "credit": "Dylan Page",
   "channel_url": "https://www.youtube.com/@dylan.page.",
@@ -169,15 +261,40 @@
   "sources": [
    "https://www.youtube.com/channel/UCzPpbeK8ANcNKg5aoMB0miw/streams"
   ],
-  "title_keywords": ["gta 6", "gta6", "gta vi", "grand theft auto vi", "grand theft auto 6", "marathon"],
-  "required_hashtags": ["DylanPage"],
-  "optional_hashtags": ["gta6", "gtavi", "gaming", "streamer", "funnymoments"],
+  "title_keywords": [
+   "gta 6",
+   "gta6",
+   "gta vi",
+   "grand theft auto vi",
+   "grand theft auto 6",
+   "marathon"
+  ],
+  "required_hashtags": [
+   "DylanPage"
+  ],
+  "optional_hashtags": [
+   "gta6",
+   "gtavi",
+   "gaming",
+   "streamer",
+   "funnymoments"
+  ],
   "required_text": "",
   "cta_overlay": "",
   "disclosure": "",
   "layout": "facecam",
-  "facecam": [0.685, 0.16, 0.31, 0.29],
-  "gameplay": [0.0, 0.0, 0.7, 1.0],
+  "facecam": [
+   0.685,
+   0.16,
+   0.31,
+   0.29
+  ],
+  "gameplay": [
+   0.0,
+   0.0,
+   0.7,
+   1.0
+  ],
   "brief": [
    "Footage ONLY from Dylan Page's GTA 6 marathon starting 19 November 2026 (streams, VODs and clips of the marathon), live on YouTube: 'FIRST TO BEAT GTA 6 (By Cheating) | DAY n'. Campaign ends with the marathon (~24 Nov): give Dylan priority in the slots until then.",
    "The marathon theme is beating the story with the game's own cheat codes: that is fine to show. Never show or explain hacks, mods, exploits or anything that breaks the game for others.",
