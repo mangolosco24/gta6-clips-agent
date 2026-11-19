@@ -50,7 +50,13 @@ Fai così:
      YT_CLIENT_ID e YT_CLIENT_SECRET come variabili d'ambiente sul PC;
    - lanciare `.venv\Scripts\python publisher.py --auth` e scegliere il NUOVO canale GTA (non
      quello vecchio): il token viene salvato in youtube_token.json, solo sul PC;
-   - mettere "posting_mode": "auto" in settings.json.
+   - mettere "posting_mode": "auto" in settings.json;
+   - promemoria sul telefono: attivare la "Google Calendar API" nello stesso progetto Google Cloud
+     (l'autorizzazione --auth chiede anche il permesso Calendar), lasciare
+     "calendar_reminders": true in settings.json e provare con
+     `.venv\Scripts\python publisher.py --test-calendar` (evento tra 3 minuti: deve arrivare la
+     notifica dell'app Google Calendar sul telefono). Le notifiche push dell'app di Claude NON
+     funzionano dai task programmati.
    Da quel momento si usa la AUTO POSTING MODE di CLAUDE.md: lo Short viene caricato su YouTube
    programmato esattamente all'orario dello slot, e io devo solo inviare il link alla campagna
    entro 30 minuti da quell'orario (più TikTok/Instagram a mano). Anche le risposte ai commenti
