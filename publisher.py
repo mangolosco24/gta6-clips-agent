@@ -28,7 +28,9 @@ import requests
 HERE = os.path.dirname(os.path.abspath(__file__))
 # upload + comments (engager.py). Changing scopes needs a new --auth.
 SCOPE = ("https://www.googleapis.com/auth/youtube.upload "
-         "https://www.googleapis.com/auth/youtube.force-ssl")
+         "https://www.googleapis.com/auth/youtube.force-ssl "
+         "https://www.googleapis.com/auth/calendar.events")  # publish-time reminder events
+CALENDAR_URL = "https://www.googleapis.com/calendar/v3/calendars/primary/events"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 UPLOAD_URL = "https://www.googleapis.com/upload/youtube/v3/videos"
 CATEGORY_GAMING = "20"
@@ -272,6 +274,34 @@ def upload(video, meta, privacy, publish_at, token):
     return r.json()["id"]
 
 
+def calendar_reminder(script, url, publish_at, token):
+    """Google Calendar event at the moment the Short goes public, with a phone pop-up, so the
+    owner submits the link to the campaign within 30 minutes. Never blocks publishing."""
+    cfg = os.path.join(HERE, "settings.json")
+    if not (os.path.exists(cfg) and json.load(open(cfg, encoding="utf-8")).get("calendar_reminders")):
+        return
+    try:
+        camp = campaign(script)
+        start = _utc(publish_at)
+        within = camp.get("submit_within_minutes", 30)
+        body = {
+            "summary": f"Invia link Short ({camp.get('streamer', '')}) entro {within} min",
+            "description": (f"YouTube: {url}\n\nInvia qui: {camp.get('campaign_url', '')}\n\n"
+                            f"TikTok/Instagram: testi nel file _upload.txt su Drive.\n{script['title']}"),
+            "start": {"dateTime": start.strftime("%Y-%m-%dT%H:%M:%SZ")},
+            "end": {"dateTime": (start + dt.timedelta(minutes=within)).strftime("%Y-%m-%dT%H:%M:%SZ")},
+            "reminders": {"useDefault": False, "overrides": [{"method": "popup", "minutes": 0}]},
+        }
+        r = requests.post(CALENDAR_URL, json=body, timeout=30,
+                          headers={"Authorization": f"Bearer {token}"})
+        if r.status_code >= 300:
+            log(f"calendar reminder not created: {r.status_code} {r.text[:200]}")
+        else:
+            log("calendar reminder created")
+    except Exception as e:  # noqa: BLE001 - a reminder must never break the upload
+        log(f"calendar reminder failed: {e}")
+
+
 def publish(d, a, token=None):
     d = os.path.abspath(d)
     script = json.load(open(os.path.join(d, "script.json"), encoding="utf-8"))
@@ -304,6 +334,8 @@ def publish(d, a, token=None):
     json.dump({"id": vid, "url": url, "privacy": a.privacy, "publish_at": a.at,
                "title": meta["title"]}, open(done, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     log(f"scheduled for {a.at}: {url}" if a.at else f"published: {url}")
+    if a.at:
+        calendar_reminder(script, url, a.at, token)
     return url
 
 
@@ -317,10 +349,16 @@ def main():
     ap.add_argument("--slot", help="'auto' = next free daily slot (SLOTS), or 'HH:MM' Rome time "
                                    "(e.g. 20:00 = next 20:00 Rome)")
     ap.add_argument("--dry-run", action="store_true", help="only build title/description/tags")
+    ap.add_argument("--test-calendar", action="store_true",
+                    help="create a test reminder event 3 minutes from now")
     a = ap.parse_args()
 
     if a.auth:
         return auth_flow()
+    if a.test_calendar:
+        at = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        test = {"campaign": next(iter(__import__("writer").campaigns())), "title": "TEST promemoria"}
+        return calendar_reminder(test, "https://youtube.com/shorts/TEST", at, access_token())
     if a.all:
         folders = sorted(glob.glob(os.path.join(HERE, "output", "*", "script.json")))
         token = None if a.dry_run else access_token()
