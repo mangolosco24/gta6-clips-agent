@@ -183,6 +183,67 @@
   ]
  },
  {
+  "id": "boeshi",
+  "active": false,
+  "name": "Boeshi GTA 6 Clipping (ClipLaunch)",
+  "campaign_url": "https://contentrewards.com/c/campaigns/5c01ecdb-a148-4489-ba26-5aadbbb5bf69",
+  "pay": "$1.00 / 1K views on TikTok, Instagram and YouTube; min payout $3 (= 3,000 views), max $300 per clip. Budget $1,750. 40%+ Tier 1 audience.",
+  "submit_within_minutes": 30,
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
+  "platform": "twitch",
+  "twitch_channel": "darealboeshi",
+  "eligible_from": "2026-11-18",
+  "streamer": "Boeshi",
+  "credit": "darealboeshi on Twitch",
+  "channel_url": "https://www.twitch.tv/darealboeshi",
+  "watch_more": "Full stream:",
+  "sources": [],
+  "title_keywords": [],
+  "required_hashtags": [],
+  "optional_hashtags": [
+   "gta6",
+   "gtavi",
+   "twitch",
+   "streamer",
+   "gaming",
+   "funnymoments",
+   "boeshi"
+  ],
+  "required_text": "FULL STREAM at twitch.tv/darealboeshi",
+  "cta_overlay": "FULL STREAM\nTWITCH.TV/DAREALBOESHI",
+  "disclosure": "",
+  "logo": {
+   "file": "assets/boeshi_overlay.png",
+   "width": 1080,
+   "x": "(W-w)/2",
+   "y": "0"
+  },
+  "layout": "facecam",
+  "facecam": [
+   0.0,
+   0.135,
+   0.215,
+   0.26
+  ],
+  "gameplay": [
+   0.2,
+   0.06,
+   0.8,
+   0.87
+  ],
+  "brief": [
+   "Only recent GTA 6 content from Boeshi's Twitch VODs (twitch.tv/darealboeshi; his GTA streams are titled 'GTA 6 Leaked' as a joke). Twitch clips cut from those VODs are fine; never his Resident Evil, IRL ('I walk') or other non-GTA streams.",
+   "REQUIRED: the campaign's on-screen overlay (assets/boeshi_overlay.png, from the ClipLaunch Drive folder) clearly visible for the WHOLE video. Never publish without it.",
+   "Every caption tags his Twitch: e.g. 'FULL STREAM at twitch.tv/darealboeshi', 'Catch Boeshi LIVE at twitch.tv/darealboeshi', 'Full VOD on twitch.tv/darealboeshi'.",
+   "Funny, high-retention clips. Priority: jokes about how his voice sounds, his voice bits, and the 'mewing' face he makes when focusing or scared. Moments where he looks good ('chad edits') and relatable meme captions (Sam Sulek style, e.g. 'me in class when it's show and tell day') are welcome, but the caption must stay accurate to what happens: no fake context or misleading titles.",
+   "No story spoilers without warning, no isolated cutscenes (Rockstar rules). 40%+ Tier 1 audience, at least 0.8% engagement, clips stay live 30 days, same clip at most 5 posts, no reuploads of other clippers' edits, no botting."
+  ]
+ },
+ {
   "id": "kreekcraft",
   "active": true,
   "name": "KreekCraft GTA 6 Clipping (ClipLaunch)",

@@ -147,6 +147,10 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
 - Bobby VanRiper (bobby_vanriper) streams on Twitch: clips.py lists his most viewed Twitch clips
   since `eligible_from`; Twitch does not tell the game, so check transcript/frames: only GTA VI
   gameplay (not his IRL Miami / NBA game / Fortnite streams). YouTube, TikTok and Instagram.
+- Boeshi (darealboeshi, Twitch, ClipLaunch): the overlay assets/boeshi_overlay.png must be visible
+  for the whole Short (montage.py overlays it like the KreekCraft logo); every caption tags
+  twitch.tv/darealboeshi. Favour his voice bits and "mewing" face; his GTA streams are titled
+  "GTA 6 Leaked" (a joke title, normal gameplay). 3,000 views minimum per post.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.
 - When the owner reports views of a Short, add them to `performance.md` and update its lessons.
