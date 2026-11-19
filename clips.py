@@ -379,9 +379,33 @@ def scan(days, per_video, per_source, only=None, kick_clips=8):
               f"{c['signal']}={c['score']} {'USED ' if c['already_used_overlap'] else ''}{c['title'][:50]}")
 
 
+def window_transcript(vid, a, b):
+    """Transcribe only [a, b] seconds of a YouTube video (long streams have no captions)."""
+    os.makedirs(CACHE, exist_ok=True)
+    out = os.path.join(CACHE, f"{vid}_{int(a)}_{int(b)}.m4a")
+    if not os.path.exists(out):
+        ytdlp(["-f", "ba[ext=m4a]/ba", "--download-sections", f"*{a}-{b}", "-o", out,
+               f"https://www.youtube.com/watch?v={vid}"], timeout=600)
+    from transcribe import words
+    w = words(out, out + ".words.json")
+    line, t0 = [], None
+    for x in w:
+        t0 = x["start"] if t0 is None else t0
+        line.append(x["w"])
+        if x["w"].endswith((".", "?", "!")) or len(line) > 14:
+            print(f"[{hms(a + t0)}] {' '.join(line)}")
+            line, t0 = [], None
+    if line:
+        print(f"[{hms(a + t0)}] {' '.join(line)}")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
+    w = sub.add_parser("words", help="transcribe one window: clips.py words VIDEO_ID START END (seconds)")
+    w.add_argument("video_id")
+    w.add_argument("start", type=float)
+    w.add_argument("end", type=float)
     p = sub.add_parser("scan")
     p.add_argument("--days", type=int, default=3, help="only streams/videos from the last N days")
     p.add_argument("--per-video", type=int, default=5, help="candidate windows per video")
@@ -389,4 +413,7 @@ if __name__ == "__main__":
     p.add_argument("--campaign", help="scan only this campaign id")
     p.add_argument("--kick-clips", type=int, default=8, help="most viewed Kick clips to transcribe")
     a = ap.parse_args()
-    scan(a.days, a.per_video, a.per_source, a.campaign, a.kick_clips)
+    if a.cmd == "words":
+        window_transcript(a.video_id, a.start, a.end)
+    else:
+        scan(a.days, a.per_video, a.per_source, a.campaign, a.kick_clips)

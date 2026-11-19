@@ -30,8 +30,8 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    a scheduled run that ends its turn while waiting is closed, and the slot stays empty.
    Chat spikes can be fake moments (the streamer asking chat to type something, giveaways,
    polls): always check in the transcript that the window is a real gameplay moment/reaction.
-   Long streams have no captions: transcribe a candidate window before choosing it, e.g.
-   download only that section's audio with yt-dlp `--download-sections` and run faster-whisper.
+   Long streams have no captions: transcribe a candidate window before choosing it with
+   `.venv\Scripts\python clips.py words <video_id> <start_s> <end_s>` (window_s from candidates).
    Pick ONE moment following `RULES` in `writer.py`: funny/high-energy/story with setup and payoff,
    streamer is the focus, no spoilers/leaks/isolated cutscenes/cheats, not overlapping
    used_clips.md (`already_used_overlap` must be false). Use the transcript timestamps to choose an
