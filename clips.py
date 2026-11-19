@@ -309,6 +309,21 @@ def twitch_clips(channel, time_range="7d", n=40):
     return json.loads(r).get("entries") or []
 
 
+# Twitch clip mp4s have continuous timestamps but often a variable frame rate that is mislabelled
+# (e.g. tagged 60 fps, really ~25): KICK_RETIME (frame count / tagged rate) would squash the video.
+# Keep the real timestamps and resample to a constant 30 fps instead.
+TWITCH_NORMALIZE = ["-vf", "fps=30", "-af", "aresample=async=1:first_pts=0",
+                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-c:a", "aac", "-b:a", "192k"]
+
+
+def normalize_clip(src, out, source):
+    """Whole Kick/Twitch clip -> continuous, constant-rate mp4 (what agent.py cuts from)."""
+    flags = TWITCH_NORMALIZE if source == "twitch_clip" else KICK_RETIME
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", src, "-map", "0:v:0", "-map", "0:a:0",
+                    *flags, out], check=True)
+    return out
+
+
 def twitch_download(url, path):
     """Download a Twitch clip (mp4) to path, once."""
     if not os.path.exists(path):

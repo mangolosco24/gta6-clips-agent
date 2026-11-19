@@ -126,6 +126,25 @@ def jump_test(tmp):
     ok(bool(p), f"qa.check catches a 2 s timestamp jump: {p or 'NOT CAUGHT'}")
 
 
+def vfr_test(tmp):
+    """Twitch clips: variable frame rate tagged as 60 fps (the Boeshi bug). The normalised clip must
+    keep its length and A/V sync."""
+    import clips
+    src, vfr, norm = (os.path.join(tmp, n) for n in ("v_src.mp4", "v_vfr.mp4", "v_norm.mp4"))
+    make_source(src)
+    ff(["-i", src, "-vf", r"select='not(mod(n,3))+eq(mod(n,7),1)'", "-fps_mode", "vfr",
+        "-c:v", "libx264", "-preset", "ultrafast", "-c:a", "copy", vfr])
+    clips.normalize_clip(vfr, norm, "twitch_clip")
+    p = qa.check(norm, expected=11.0, final=False)
+    ok(not p, f"[twitch vfr] normalised clip keeps length and sync: {p or 'ok'}")
+    fl, bp = flash_times(norm), beep_times(norm)
+    if len(fl) == len(bp) == len(FLASHES):
+        worst = max(abs(f - b) for f, b in zip(fl, bp))
+        ok(worst <= 1 / 30 + 0.012, f"[twitch vfr] A/V offset max {worst * 1000:.0f} ms (limit 1 frame)")
+    else:
+        ok(False, f"[twitch vfr] found {len(fl)} flashes / {len(bp)} beeps")
+
+
 def unit_tests():
     import publisher
     import writer
@@ -168,6 +187,7 @@ if __name__ == "__main__":
         unit_tests()
         sync_test(tmp)
         jump_test(tmp)
+        vfr_test(tmp)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     print(f"\n{'ALL TESTS PASSED' if not FAILS else str(len(FAILS)) + ' TEST(S) FAILED'}")

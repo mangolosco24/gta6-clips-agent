@@ -184,7 +184,7 @@
  },
  {
   "id": "boeshi",
-  "active": false,
+  "active": true,
   "name": "Boeshi GTA 6 Clipping (ClipLaunch)",
   "campaign_url": "https://contentrewards.com/c/campaigns/5c01ecdb-a148-4489-ba26-5aadbbb5bf69",
   "pay": "$1.00 / 1K views on TikTok, Instagram and YouTube; min payout $3 (= 3,000 views), max $300 per clip. Budget $1,750. 40%+ Tier 1 audience.",
@@ -218,9 +218,9 @@
   "disclosure": "",
   "logo": {
    "file": "assets/boeshi_overlay.png",
-   "width": 1080,
+   "width": 620,
    "x": "(W-w)/2",
-   "y": "0"
+   "y": "665"
   },
   "layout": "facecam",
   "facecam": [
