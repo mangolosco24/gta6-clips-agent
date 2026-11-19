@@ -96,6 +96,10 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   AUTO routine once per slot (17:00, 20:00, 23:00), one after the other, each with its own
   --check-slot and --slot. The afternoon tasks will then find the slots TAKEN and skip.
 - "Salta oggi": nothing to do; or if some slots are already scheduled, tell the owner which.
+- "Pubblicane un altro adesso" (e.g. at night, owner at the PC): one extra Short outside the 3
+  slots is fine when the owner asks. Run the routine and schedule it ~10 min after the render
+  ends with `--slot HH:MM` (the owner is there to submit within 30 min). Late night Rome is US
+  prime time, good for Tier 1. Still at most 1 extra per day unless the owner insists.
 
 ## Rules
 - Never clip a streamer that is not in an active campaign in campaigns.json.
