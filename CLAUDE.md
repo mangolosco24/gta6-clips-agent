@@ -136,8 +136,8 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
 - Several active campaigns (kreekcraft, dylanpage: YouTube; dom: Kick clips; tomo closed 2026-11-19, budget used up): candidates.json mixes them. Pick the
   strongest moment, but alternate campaigns between slots when quality is similar (check
   used_clips.md). Each Short belongs to ONE campaign: its own hashtags, credit, CTA, platforms.
-  For a Kick candidate copy `source`, `source_url` and `source_page` (= candidate url) into the
-  script; start/end are seconds inside that clip.
+  For a Kick or Twitch candidate copy `source`, `source_url` and `source_page` (= candidate url) into
+  the script; start/end are seconds inside that clip.
 - KreekCraft: the official logo (assets/kreekcraft_logo.png) is overlaid on the whole video by
   montage.py; writer.py check fails if it is missing. NO links/URLs anywhere (no_links): never
   put a URL in title, description, captions or first comment. Long streams (9-12 h): if the
@@ -145,6 +145,9 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
 - Dylan Page: only his GTA 6 marathon (YouTube, from 2026-11-19, ends ~2026-11-24). Until it
   ends, prefer a Dylan moment in at least one slot per day; after it ends set `active` to false.
   Dylan must be on screen/heard for the whole clip. 10,000 views minimum per post: only strong moments.
+- Bobby VanRiper (bobby_vanriper) streams on Twitch: clips.py lists his most viewed Twitch clips
+  since `eligible_from`; Twitch does not tell the game, so check transcript/frames: only GTA VI
+  gameplay (not his IRL Miami / NBA game / Fortnite streams). YouTube, TikTok and Instagram.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.
 - When the owner reports views of a Short, add them to `performance.md` and update its lessons.

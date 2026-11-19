@@ -145,6 +145,10 @@ def unit_tests():
     errs = writer.validate(base)
     ok(not any("missing" in e for e in errs), f"start 0 accepted ({errs or 'ok'})")
     ok(any("length" in e for e in writer.validate(dict(base, end=60))), "60 s clip rejected")
+    tw = dict(base, source="twitch_clip", video_id="twitch_123456")
+    ok(any("source_url" in e for e in writer.validate(tw)), "twitch clip without source_url rejected")
+    ok(not any("source_url" in e for e in writer.validate(dict(tw, source_url="https://clips.twitch.tv/x"))),
+       "twitch clip with source_url accepted")
     for cid, camp in writer.campaigns().items():
         if camp.get("no_links"):
             meta = publisher.build_metadata(dict(base, campaign=cid))

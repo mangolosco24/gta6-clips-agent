@@ -87,6 +87,38 @@
   ]
  },
  {
+  "id": "bobby",
+  "active": false,
+  "name": "BOBBY VAN RIPER GTA VI Clipping (Clipping Nation)",
+  "campaign_url": "",
+  "pay": "$1.50 / 1K views on TikTok, Instagram and YouTube; min payout $2.25 (= 1,500 views), max $150 per post. Budget $1,000. Content Rewards keeps 10%.",
+  "submit_within_minutes": 30,
+  "platforms": ["youtube", "tiktok", "instagram"],
+  "platform": "twitch",
+  "twitch_channel": "bobby_vanriper",
+  "eligible_from": "2026-11-19",
+  "streamer": "Bobby VanRiper",
+  "credit": "bobby_vanriper on Twitch",
+  "channel_url": "https://www.twitch.tv/bobby_vanriper",
+  "watch_more": "Watch him live:",
+  "sources": [],
+  "title_keywords": [],
+  "required_hashtags": [],
+  "optional_hashtags": ["gta6", "gtavi", "gaming", "funnymoments", "twitch", "streamer"],
+  "required_text": "Watch Bobby live on Twitch: twitch.tv/bobby_vanriper",
+  "cta_overlay": "WATCH BOBBY LIVE\nTWITCH.TV/BOBBY_VANRIPER",
+  "disclosure": "",
+  "layout": "facecam",
+  "facecam": [0.0, 0.28, 0.21, 0.27],
+  "gameplay": [0.18, 0.0, 0.62, 1.0],
+  "brief": [
+   "INCOMPLETE: paste the full campaign brief from Content Rewards ('Mostra di più') before using this campaign.",
+   "Footage only from Bobby VanRiper's own GTA VI streams on Twitch (twitch.tv/bobby_vanriper), incl. Twitch clips of those streams. Not his IRL / Miami / NBA game streams, not other games.",
+   "Keep his face or voice and his real reaction; credit him on screen.",
+   "Post on YouTube Shorts, TikTok and Instagram Reels; submit each link within 30 minutes."
+  ]
+ },
+ {
   "id": "kreekcraft",
   "active": true,
   "name": "KreekCraft GTA 6 Clipping (ClipLaunch)",

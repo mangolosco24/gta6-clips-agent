@@ -15,10 +15,10 @@ MIN_LEN, MAX_LEN = 12, 35  # seconds; prefer 15-25: higher "viewed vs swiped awa
 SCHEMA = {
     "slug": "short snake_case name, unique (e.g. tomo_police_chase_fail)",
     "campaign": "id from campaigns.json",
-    "video_id": "YouTube id of the source stream/video, or the Kick clip id (clip_...)",
-    "source": "only for Kick: 'kick_clip' (copy from the candidate)",
-    "source_url": "only for Kick: the clip's playlist URL (candidate source_url)",
-    "source_page": "only for Kick: the clip page URL (candidate url), shown as source",
+    "video_id": "YouTube id of the source stream/video, the Kick clip id (clip_...) or the Twitch clip id (twitch_...)",
+    "source": "only for Kick/Twitch clips: 'kick_clip' or 'twitch_clip' (copy from the candidate)",
+    "source_url": "only for Kick/Twitch: the clip URL (candidate source_url)",
+    "source_page": "only for Kick/Twitch: the clip page URL (candidate url), shown as source",
     "start": "clip start in the source, seconds or 'h:mm:ss'",
     "end": "clip end in the source, seconds or 'h:mm:ss' (12-35 s after start, prefer 15-25)",
     "tags": "3-4 post-specific search phrases describing exactly this clip (e.g. 'dom gta 6 gas station robbery'); niche and broad tags are added automatically",
@@ -116,8 +116,8 @@ def validate(s):
         errs.append(f"campaign {s['campaign']} is not active")
     if camp and camp.get("logo") and not os.path.exists(os.path.join(HERE, camp["logo"]["file"])):
         errs.append(f"campaign logo missing: put it at {camp['logo']['file']}")
-    if s.get("source") == "kick_clip" and not s.get("source_url"):
-        errs.append("kick_clip needs source_url")
+    if s.get("source") in ("kick_clip", "twitch_clip") and not s.get("source_url"):
+        errs.append("clip sources need source_url")
     if not re.fullmatch(r"[a-z0-9_]+", s["slug"]):
         errs.append("slug must be snake_case")
     a, b = seconds(s["start"]), seconds(s["end"])

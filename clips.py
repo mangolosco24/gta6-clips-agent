@@ -300,6 +300,63 @@ def kick_candidates(camp, days, used, max_clips):
     return out
 
 
+# ---------- Twitch (clips made by viewers, listed by yt-dlp) ----------
+
+def twitch_clips(channel, time_range="7d", n=40):
+    """Most viewed clips of a Twitch channel: [{id, url, title, duration, timestamp, view_count}]."""
+    r = ytdlp(["--flat-playlist", "--playlist-end", str(n), "-J",
+               f"https://www.twitch.tv/{channel}/clips?filter=clips&range={time_range}"], timeout=300)
+    return json.loads(r).get("entries") or []
+
+
+def twitch_download(url, path):
+    """Download a Twitch clip (mp4) to path, once."""
+    if not os.path.exists(path):
+        ytdlp(["-f", "best[ext=mp4]/best", "-o", path, url], timeout=600)
+    return path
+
+
+def twitch_candidates(camp, days, used, max_clips):
+    """Most viewed clips of the campaign's Twitch channel since `eligible_from` (the first GTA VI
+    stream). Twitch does not tell the game of a clip here: Claude checks transcript and frames."""
+    ch = camp["twitch_channel"]
+    since = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
+    eligible = dt.datetime.fromisoformat(camp.get("eligible_from", "2000-01-01")).replace(
+        tzinfo=dt.timezone.utc)
+    used_ids = {u for u, _, _ in used}
+    try:
+        clips = twitch_clips(ch)
+    except Exception as e:  # noqa: BLE001 - network errors: report and go on
+        log(f"twitch {ch}: {e}")
+        return []
+    out = []
+    os.makedirs(CACHE, exist_ok=True)
+    for c in sorted(clips, key=lambda c: c.get("view_count") or 0, reverse=True):
+        created = dt.datetime.fromtimestamp(c.get("timestamp") or 0, dt.timezone.utc)
+        if created < max(since, eligible):
+            continue
+        vid = f"twitch_{c['id']}"
+        try:
+            local = twitch_download(c["url"], os.path.join(CACHE, f"{vid}.mp4"))
+        except RuntimeError as e:
+            log(f"{vid}: download failed {str(e)[:150]}")
+            continue
+        caps = kick_transcript({"id": vid, "clip_url": local})
+        dur = c.get("duration") or 0
+        out.append({
+            "campaign": camp["id"], "source": "twitch_clip", "video_id": vid,
+            "source_url": c["url"], "title": c.get("title", ""), "url": c["url"],
+            "date": created.date().isoformat(), "duration": hms(dur),
+            "signal": "twitch_clip_views", "score": c.get("view_count") or 0,
+            "window": [hms(0), hms(dur)], "window_s": [0, int(dur)],
+            "already_used_overlap": vid in used_ids,
+            "transcript": transcript(caps, 0, dur + 1) or "(no speech)"})
+        log(f"{camp['id']} twitch {c['id']}: {c.get('view_count')} views, {dur}s - {c.get('title', '')[:50]}")
+        if len(out) >= max_clips:
+            break
+    return out
+
+
 def scan(days, per_video, per_source, only=None, kick_clips=8):
     used = used_clips()
     result = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -312,6 +369,9 @@ def scan(days, per_video, per_source, only=None, kick_clips=8):
             continue
         if camp.get("platform") == "kick":
             result["candidates"] += kick_candidates(camp, days, used, kick_clips)
+            continue
+        if camp.get("platform") == "twitch":
+            result["candidates"] += twitch_candidates(camp, days, used, kick_clips)
             continue
         seen = set()
         for src in camp["sources"]:

@@ -22,7 +22,7 @@ import qa  # noqa: E402
 import transcribe  # noqa: E402
 from writer import campaigns, seconds, validate  # noqa: E402
 
-from clips import KICK_RETIME, YTDLP  # noqa: E402  (same flags, incl. optional cookies)
+from clips import KICK_RETIME, YTDLP, twitch_download  # noqa: E402  (same flags, incl. optional cookies)
 
 
 def log(msg):
@@ -40,14 +40,19 @@ def download(script, d):
         if os.path.exists(os.path.join(d, f)):
             os.remove(os.path.join(d, f))
     log(f"downloading {script['video_id']} {a:.1f}-{b:.1f}s")
-    if script.get("source") == "kick_clip":
+    if script.get("source") in ("kick_clip", "twitch_clip"):
         # Kick clip (HLS): copy the whole clip first (seeking/re-encoding straight from the
         # playlist dropped frames -> stutter), then cut locally with an exact frame rate.
+        # Twitch clip: download the mp4 with yt-dlp first, then the same steps.
         full = os.path.join(d, "kick_full.mp4")
         if not os.path.exists(full):
+            src_in = script["source_url"]
+            if script["source"] == "twitch_clip":
+                src_in = twitch_download(script["source_url"], os.path.join(d, "twitch_raw.mp4"))
             # Kick clip playlists jump ~2 s in their timestamps every ~10 s: rebuild continuous
             # timestamps from frame/sample counts, otherwise video freezes and audio drifts.
-            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", script["source_url"],
+            # Same transform as the candidate transcript, so timestamps match.
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", src_in,
                             "-map", "0:v:0", "-map", "0:a:0", *KICK_RETIME, full], check=True)
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", full, "-ss", f"{a:.2f}", "-to", f"{b:.2f}",
                         "-vf", "fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
@@ -85,7 +90,7 @@ def social_caption(s, camp, extra_tags, limit=6):
 
 
 def source_link(s):
-    if s.get("source") == "kick_clip":
+    if s.get("source") in ("kick_clip", "twitch_clip"):
         return s.get("source_page") or s["source_url"]
     return f"https://www.youtube.com/watch?v={s['video_id']}&t={int(seconds(s['start']))}s"
 
