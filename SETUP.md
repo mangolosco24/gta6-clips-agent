@@ -65,12 +65,16 @@ per inviare il link in tempo.
 Succede dopo molte richieste. Spesso si sblocca da solo in qualche ora. Se dura:
 
 1. Usa un **account Google secondario**, non quello del canale: YouTube può segnalare l'account.
-2. In Firefox (o in un profilo Chrome separato), in una finestra privata, accedi a YouTube con
-   quell'account.
-3. Esporta i cookie di youtube.com in formato Netscape con un'estensione tipo
-   "Get cookies.txt LOCALLY" e salva il file come `youtube_cookies.txt` in questa cartella.
-4. Chiudi la finestra privata senza uscire dall'account.
-5. In `settings.json` aggiungi `"youtube_cookies": "youtube_cookies.txt"`.
+2. In Chrome installa l'estensione **"Get cookies.txt LOCALLY"**, poi in `chrome://extensions` →
+   Dettagli → attiva **"Consenti in modalità di navigazione in incognito"**.
+3. Apri una finestra in incognito (Ctrl+Shift+N), vai su youtube.com, accedi con l'account
+   secondario e fai partire un video qualche secondo.
+4. Con la scheda di YouTube aperta clicca l'estensione → formato **Netscape** → **Export** (solo
+   questo sito). Rinomina il file in `youtube_cookies.txt` e mettilo in questa cartella.
+5. Chiudi la finestra incognito **senza fare logout** (il logout invalida i cookie).
+6. `settings.json` contiene già `"youtube_cookies": "youtube_cookies.txt"`.
+
+yt-dlp ha anche bisogno di un motore JavaScript (Deno): è in requirements.txt, non serve altro.
 
 Il file resta solo sul PC (`.gitignore` lo esclude). Non condividerlo con nessuno.
 
