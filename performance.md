@@ -15,7 +15,7 @@ Never delete and re-upload a weak Short: campaigns require 30 days online and ba
 | 2026-11-19 08:00 | tomo_gta6_silent_disco | funny in-game moment (muted club music) | 26.5 s | 651 | ? | 2026-11-19 23:30 | posted in US night |
 | 2026-11-19 17:00 | dom_gta6_crib_renovation | first reaction: Dom renovating his crib in GTA 6, Kick clip | 38.7 s | 10 | ? | 2026-11-19 23:30 | Dom; first auto-scheduled Short; first comment posted by hand at release |
 | 2026-11-19 morning | dom_gta6_gas_price | funny in-game moment (gas price, then robbery), Kick clip, facecam layout | 29.8 s | 526 | ? | 2026-11-19 23:30 | Dom campaign; posted in US night |
-| 2026-11-19 20:55 | dylan_gta6_respray_cops | gameplay trick: respray to lose the cops | 22 s | 24 | ? | 2026-11-19 23:30 | Dylan; title shown on YouTube is "Do you know this trick in GTA VI?" (YouTube title test or edited) |
+| 2026-11-19 20:55 | dylan_gta6_respray_cops | gameplay trick: respray to lose the cops | 22 s | 24 | ? | 2026-11-19 23:30 | Dylan; title shown on YouTube is "Do you know this trick in GTA VI?" (renamed by the owner) |
 | 2026-11-19 23:00 | tomo_gta6_graphics_unreal | first reaction: Tomo can't believe the graphics | 29.5 s | 8 | ? | 2026-11-19 23:30 | just out when measured |
 | 2026-11-20 01:00 | dom_gta6_toxic_karen | funny NPC interaction (Karen, provoke), Kick clip, facecam | 19.7 s | ? | ? | | Dom; extra slot |
 | 2026-11-18 ~19:00 | tomo_gta6_empty_box | IRL vlog (not gameplay), not submitted | 37 s | 25 | ? | 2026-11-19 23:30 | warm-up post |
