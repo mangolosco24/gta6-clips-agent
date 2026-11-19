@@ -105,7 +105,7 @@ def validate(s):
     errs = []
     for k in ("slug", "campaign", "video_id", "start", "end", "title", "description",
               "hashtags", "hook_text", "first_comment"):
-        if not s.get(k):
+        if s.get(k) in (None, "", []):  # 0 is a valid start time
             errs.append(f"missing {k}")
     if errs:
         return errs
