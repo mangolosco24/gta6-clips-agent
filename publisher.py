@@ -302,7 +302,7 @@ def publish(d, a, token=None):
     vid = upload(video, meta, a.privacy, a.at, token)
     url = f"https://youtube.com/shorts/{vid}"
     json.dump({"id": vid, "url": url, "privacy": a.privacy, "publish_at": a.at,
-               "title": meta["title"]}, open(done, "w"), indent=1)
+               "title": meta["title"]}, open(done, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     log(f"scheduled for {a.at}: {url}" if a.at else f"published: {url}")
     return url
 

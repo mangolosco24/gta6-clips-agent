@@ -77,6 +77,8 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   `engager.py pending` posts it (step 2).
 - final message: "Esce su YouTube alle HH:MM: invia il link <youtube url> alla campagna entro le
   HH:MM+30", plus TikTok/Instagram instructions as in step 9.
+- At publish time a separate scheduled task runs `remind.py` (reads output/*/youtube.json) and
+  sends the owner a phone notification with the link to submit.
 
 ## Rules
 - Never clip a streamer that is not in an active campaign in campaigns.json.
