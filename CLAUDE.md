@@ -120,6 +120,9 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   montage.py; writer.py check fails if it is missing. NO links/URLs anywhere (no_links): never
   put a URL in title, description, captions or first comment. Long streams (9-12 h): if the
   scan is slow, run `clips.py scan --campaign kreekcraft` on its own.
+- Dylan Page: only his GTA 6 marathon (YouTube, from 2026-11-19, ends ~2026-11-24). Until it
+  ends, prefer a Dylan moment in at least one slot per day; after it ends set `active` to false.
+  Dylan must be on screen/heard for the whole clip. 10,000 views minimum per post: only strong moments.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.
 - When the owner reports views of a Short, add them to `performance.md` and update its lessons.

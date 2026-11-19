@@ -43,7 +43,8 @@ Picking the moment:
 - 15-45 seconds, prefer 20-35: completion rate decides how far a Short travels.
 - Read performance.md first and favour the kind of moment that performed best so far.
 - Never: leaked footage, story spoilers, an isolated cutscene or in-game TV/radio show posted on
-  its own, cheats/exploits, drama bait, anything hateful or sexual, a clip already in used_clips.md.
+  its own, hacks/mods/exploit tutorials, drama bait, anything hateful or sexual, a clip already in
+  used_clips.md. (Funny glitches/fails and the game's built-in single-player cheat codes are fine.)
 - The streamer must be the focus (their voice/reaction), not just raw gameplay.
 
 - Prefer in-game GTA 6 moments (funny/chaotic moments and first reactions to new features,

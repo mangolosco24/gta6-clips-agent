@@ -126,5 +126,41 @@
    "Audience: at least 40% Tier 1 (US, UK, CA, AU). Engagement at least 0.8%. Likes visible. Clips stay public for 30 days. Never more than 5 near-identical posts.",
    "Platforms: TikTok, Instagram Reels, YouTube Shorts. Submit each link within 30 minutes of posting."
   ]
+ },
+ {
+  "id": "dylanpage",
+  "active": true,
+  "name": "$5,000 Dylan Page GTA VI Marathon (NewsDaddy)",
+  "campaign_url": "https://contentrewards.com/c/campaigns/39753a1a-f1f3-491b-a8f6-0cfee0af0c97",
+  "pay": "$1.00 / 1K views on every platform, min $10 (= 10,000 views on one post), max $250 per clip, budget $5,000. Content Rewards keeps 10%. Campaign ends when the 120-hour marathon ends (~24 Nov 2026).",
+  "submit_within_minutes": 30,
+  "platforms": ["youtube", "tiktok", "instagram"],
+  "streamer": "Dylan Page",
+  "credit": "Dylan Page",
+  "channel_url": "https://www.youtube.com/@dylan.page.",
+  "watch_more": "Watch the marathon:",
+  "sources": [
+   "https://www.youtube.com/channel/UCzPpbeK8ANcNKg5aoMB0miw/streams"
+  ],
+  "title_keywords": ["gta 6", "gta6", "gta vi", "grand theft auto vi", "grand theft auto 6", "marathon"],
+  "required_hashtags": ["DylanPage"],
+  "optional_hashtags": ["gta6", "gtavi", "gaming", "streamer", "funnymoments"],
+  "required_text": "",
+  "cta_overlay": "",
+  "disclosure": "",
+  "layout": "blur",
+  "facecam": null,
+  "gameplay": null,
+  "brief": [
+   "Footage ONLY from Dylan Page's GTA 6 marathon starting 19 November 2026 (streams, VODs and clips of the marathon), live on YouTube: 'FIRST TO BEAT GTA 6 (By Cheating) | DAY n'. Campaign ends with the marathon (~24 Nov): give Dylan priority in the slots until then.",
+   "The marathon theme is beating the story with the game's own cheat codes: that is fine to show. Never show or explain hacks, mods, exploits or anything that breaks the game for others.",
+   "Dylan must be the main focus for the WHOLE clip (not only in the intro): his facecam/voice/reaction throughout.",
+   "Include #DylanPage in the caption. Captions and subtitles in English; automatic subtitles are allowed.",
+   "No misleading edits, false claims or clips out of context that damage Dylan's reputation. Titles/captions must reflect the clip.",
+   "No added watermarks or third-party branding (logos already in the footage are fine; a plain text credit to Dylan is fine).",
+   "Only own edits; publishing the same own edit on several platforms is allowed. No collab posts.",
+   "Platforms: TikTok, Instagram Reels, X, YouTube Shorts. 9:16. Account must fit (gaming/streamer/entertainment).",
+   "No AI footage, voices or fabricated reactions. No view/engagement manipulation."
+  ]
  }
 ]
