@@ -121,7 +121,7 @@
    "Submit the public link immediately, while the post is less than 30 minutes old. A post goes to one campaign only.",
    "Hook ideas (only if true): 'Dasgas Dom reacts to ...', 'Dasgas Dom finds a GTA 6 glitch', 'Dasgas Dom fails ...'."
   ],
-  "paused_reason": "2026-11-20: submission limit reached on Content Rewards (no more clips accepted). Reactivate only when the owner says the limit reset."
+  "paused_reason": "2026-11-20: Content Rewards 'limite di clip non approvate' reached (too many submitted clips still pending approval). Reactivate when the owner says a slot freed up (a clip approved/rejected or a weak submission withdrawn)."
  },
  {
   "id": "bobby",

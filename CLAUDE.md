@@ -153,9 +153,10 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   "GTA 6 Leaked" (a joke title, normal gameplay). 3,000 views minimum per post.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.
-- Campaigns can cap how many clips one clipper may submit: a Short for a campaign whose limit is
-  reached cannot be paid. Never clip a campaign with `paused_reason`; tell the owner if the only
-  good moments belong to it.
+- Content Rewards caps how many UNAPPROVED (pending) clips one clipper may have per campaign; clips
+  below the payout threshold stay pending, so weak posts block the campaign. Every Short submitted
+  uses a slot: only strong moments, spread over campaigns. Never clip a campaign with
+  `paused_reason`; tell the owner if the only good moments belong to it.
 - When the owner reports views of a Short, add them to `performance.md` and update its lessons.
 - Cross-posting the same Short to YouTube + TikTok + Instagram is fine (3 posts); never more than
   5 posts of the same or a nearly identical clip.
