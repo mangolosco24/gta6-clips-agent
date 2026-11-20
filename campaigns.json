@@ -66,7 +66,7 @@
  },
  {
   "id": "dom",
-  "active": true,
+  "active": false,
   "name": "Dasgasd3m x RUCKUS | GTA 6",
   "campaign_url": "https://contentrewards.com/c/campaigns/051002dd-5c46-43d0-a446-43f2957ba3a9",
   "pay": "$2.00 / 1K views (CPM raised; listing: min $10 = 5,000 views, max $150 per post). Content Rewards keeps 10%. Two posts never combine.",
@@ -120,7 +120,8 @@
    "Post only on the owner's GTA 6-specific TikTok or YouTube Shorts account (GTAVI_CLIP6), connected in Content Rewards. NOT Instagram. No paid-partnership tag needed.",
    "Submit the public link immediately, while the post is less than 30 minutes old. A post goes to one campaign only.",
    "Hook ideas (only if true): 'Dasgas Dom reacts to ...', 'Dasgas Dom finds a GTA 6 glitch', 'Dasgas Dom fails ...'."
-  ]
+  ],
+  "paused_reason": "2026-11-20: submission limit reached on Content Rewards (no more clips accepted). Reactivate only when the owner says the limit reset."
  },
  {
   "id": "bobby",

@@ -133,7 +133,7 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   If the only remaining moments are weak, skip the slot instead of posting filler.
 - If a campaign closes, or a streamer/campaign complains: set `active` to false and tell the user.
 - Campaigns with `active: false` are never clipped.
-- Several active campaigns (kreekcraft: YouTube; dom: Kick clips; bobby, boeshi: Twitch clips; tomo closed 2026-11-19, budget used up; dylanpage paused 2026-11-20, 10k-view minimum too high for now): candidates.json mixes them. Pick the
+- Several active campaigns (kreekcraft: YouTube; bobby, boeshi: Twitch clips; dom (Kick clips) paused 2026-11-20, submission limit reached; tomo closed 2026-11-19, budget used up; dylanpage paused 2026-11-20, 10k-view minimum too high for now): candidates.json mixes them. Pick the
   strongest moment, but alternate campaigns between slots when quality is similar (check
   used_clips.md). Each Short belongs to ONE campaign: its own hashtags, credit, CTA, platforms.
   For a Kick or Twitch candidate copy `source`, `source_url` and `source_page` (= candidate url) into
@@ -153,6 +153,9 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   "GTA 6 Leaked" (a joke title, normal gameplay). 3,000 views minimum per post.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.
+- Campaigns can cap how many clips one clipper may submit: a Short for a campaign whose limit is
+  reached cannot be paid. Never clip a campaign with `paused_reason`; tell the owner if the only
+  good moments belong to it.
 - When the owner reports views of a Short, add them to `performance.md` and update its lessons.
 - Cross-posting the same Short to YouTube + TikTok + Instagram is fine (3 posts); never more than
   5 posts of the same or a nearly identical clip.
