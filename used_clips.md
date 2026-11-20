@@ -14,5 +14,6 @@ so the same moment is never posted twice.
 | 2026-11-19 | tomo_gta6_graphics_unreal | ktjcN5jasro | 4736.5-4766 | Tomo can't believe the GTA 6 graphics are real | yt scheduled 23:00 https://youtube.com/shorts/65w64UXQ5y0 |
 | 2026-11-20 | dom_gta6_toxic_karen | clip_01M7QXX0YW649GW35PR17MYTNT | 10.8-30.5 | A GTA 6 Karen told Dasgas Dom his phone had toxic energy | yt scheduled 01:00 https://youtube.com/shorts/mmKOlsLqbbA |
 | 2026-11-20 | bobby_gta6_sunglasses_trash | twitch_3431365582 | 0.0-24.6 | Bobby VanRiper's GTA 6 shopping trip escalated fast | yt scheduled 17:00 https://youtube.com/shorts/7yEI_gYPiyk |
-| 2026-11-20 | boeshi_gta6_no_front_door | twitch_774061051 | 9.9-29.0 | Boeshi couldn't find the front door in the middle of a GTA 6 fight | yt scheduled 19:00 https://youtube.com/shorts/Dv_8E-OPNXA |
+| 2026-11-20 | boeshi_gta6_no_front_door | twitch_774061051 | 9.9-29.0 | Boeshi couldn't find the front door in the middle of a GTA 6 fight | dropped by the owner, kept private, never public (Dv_8E-OPNXA) |
+| 2026-11-20 | boeshi_gta6_doomscrolling | twitch_121049357 | 5.5-25.6 | Boeshi found social media inside GTA 6 and started doomscrolling | yt scheduled 19:00 https://youtube.com/shorts/6B4VEqQAVbs |
 | 2026-11-20 | bobby_gta6_ferris_wheel_irl | twitch_1114338138 | 24.5-41.3 | Bobby VanRiper found his real-life Ferris wheel in GTA 6 | yt scheduled 03:00 (21/11) https://youtube.com/shorts/P2QY3bIb0wY |
