@@ -66,7 +66,7 @@
  },
  {
   "id": "dom",
-  "active": false,
+  "active": true,
   "name": "Dasgasd3m x RUCKUS | GTA 6",
   "campaign_url": "https://contentrewards.com/c/campaigns/051002dd-5c46-43d0-a446-43f2957ba3a9",
   "pay": "$2.00 / 1K views (CPM raised; listing: min $10 = 5,000 views, max $150 per post). Content Rewards keeps 10%. Two posts never combine.",
@@ -121,7 +121,7 @@
    "Submit the public link immediately, while the post is less than 30 minutes old. A post goes to one campaign only.",
    "Hook ideas (only if true): 'Dasgas Dom reacts to ...', 'Dasgas Dom finds a GTA 6 glitch', 'Dasgas Dom fails ...'."
   ],
-  "paused_reason": "2026-11-20: Content Rewards 'limite di clip non approvate' reached (too many submitted clips still pending approval). Reactivate when the owner says a slot freed up (a clip approved/rejected or a weak submission withdrawn)."
+  "submission_note": "Pending-clip limit: on 2026-11-20 only ONE free slot (the crib submission was withdrawn). Use it only for a clearly strong Dom moment; after that Dom is blocked again until a clip gets approved."
  },
  {
   "id": "bobby",
