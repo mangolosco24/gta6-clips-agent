@@ -133,7 +133,7 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   If the only remaining moments are weak, skip the slot instead of posting filler.
 - If a campaign closes, or a streamer/campaign complains: set `active` to false and tell the user.
 - Campaigns with `active: false` are never clipped.
-- Several active campaigns (kreekcraft: YouTube; bobby, boeshi: Twitch clips; dom: Kick clips, read its `submission_note`; tomo closed 2026-11-19, budget used up; dylanpage paused 2026-11-20, 10k-view minimum too high for now): candidates.json mixes them. Pick the
+- Several active campaigns (kreekcraft: YouTube; bobby, boeshi: Twitch clips; dom paused 2026-11-20 (min payout raised to $20); tomo closed 2026-11-19, budget used up; dylanpage paused 2026-11-20, 10k-view minimum too high for now): candidates.json mixes them. Pick the
   strongest moment, but alternate campaigns between slots when quality is similar (check
   used_clips.md). Each Short belongs to ONE campaign: its own hashtags, credit, CTA, platforms.
   For a Kick or Twitch candidate copy `source`, `source_url` and `source_page` (= candidate url) into
