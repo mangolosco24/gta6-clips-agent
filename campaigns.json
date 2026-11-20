@@ -245,6 +245,64 @@
   ]
  },
  {
+  "id": "diego",
+  "active": true,
+  "name": "DiegoLoveless GTA 6 Clipping (ClipLaunch)",
+  "campaign_url": "https://contentrewards.com/c/campaigns/5d37d3dd-adf3-401f-9c62-24bb54d5087a",
+  "pay": "$1.00 / 1K views on TikTok, Instagram and YouTube; min payout $1 (= 1,000 views), max $300 per clip. 40%+ Tier 1 audience.",
+  "submit_within_minutes": 30,
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
+  "platform": "twitch",
+  "twitch_channel": "diegoloveless",
+  "eligible_from": "2026-11-18",
+  "streamer": "Diego Loveless",
+  "credit": "diegoloveless on Twitch",
+  "channel_url": "https://www.twitch.tv/diegoloveless",
+  "watch_more": "Watch him live:",
+  "sources": [],
+  "title_keywords": [],
+  "required_hashtags": [
+   "GTA",
+   "DiegoLoveless"
+  ],
+  "optional_hashtags": [
+   "GrandTheftAuto",
+   "Speedrun",
+   "gta6",
+   "gtavi",
+   "twitch",
+   "streamer",
+   "gaming",
+   "funnymoments"
+  ],
+  "required_text": "Watch Diego live: twitch.tv/diegoloveless",
+  "cta_overlay": "WATCH DIEGO LIVE\nTWITCH.TV/DIEGOLOVELESS",
+  "disclosure": "",
+  "layout": "facecam",
+  "brief": [
+   "Only Grand Theft Auto content from Diego Loveless's Twitch gaming streams (twitch.tv/diegoloveless, Clips tab first). Temporary GTA-only week from 18 Nov 2026 (he is speedrunning GTA to beat it): no IRL clips, no other games (e.g. his Marvel Rivals 'Eternity Magik' streams).",
+   "Priority: funny GTA moments, entertaining reactions, standout gameplay, speedrun highlights. Clear hook and payoff; streamer/brainrot editing style. Never make Diego look bad.",
+   "Show twitch.tv/diegoloveless on screen or in the caption. Hashtags #GTA and #DiegoLoveless required; #GrandTheftAuto and #Speedrun where relevant. Game-specific hashtags must match the GTA title shown (only #GTA6/#GTAVI if the clip is GTA 6).",
+   "Likes visible, at least 0.8% engagement, 40%+ Tier 1 audience, clips live 30 days, same clip at most 5 posts, no low-effort screen recordings, no reuploads, no engagement bait or botting. Overlay optional (not used)."
+  ],
+  "facecam": [
+   0.705,
+   0.565,
+   0.29,
+   0.305
+  ],
+  "gameplay": [
+   0.0,
+   0.0,
+   0.69,
+   0.88
+  ]
+ },
+ {
   "id": "kreekcraft",
   "active": true,
   "name": "KreekCraft GTA 6 Clipping (ClipLaunch)",
