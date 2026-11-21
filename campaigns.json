@@ -291,9 +291,9 @@
   ],
   "facecam": [
    0.705,
-   0.565,
+   0.59,
    0.29,
-   0.305
+   0.28
   ],
   "gameplay": [
    0.0,
@@ -304,7 +304,7 @@
  },
  {
   "id": "kreekcraft",
-  "active": true,
+  "active": false,
   "name": "KreekCraft GTA 6 Clipping (ClipLaunch)",
   "campaign_url": "https://contentrewards.com/c/campaigns/2eaa14fb-6927-4136-897e-b096e0d907d6",
   "pay": "$1.00 / 1K views, max $300 per clip, budget $6,824.60. Content Rewards keeps 10%.",
@@ -360,7 +360,8 @@
    "Accurate context: no misleading titles, fake reactions or fabricated context. No low-effort raw screen recordings.",
    "Audience: at least 40% Tier 1 (US, UK, CA, AU). Engagement at least 0.8%. Likes visible. Clips stay public for 30 days. Never more than 5 near-identical posts.",
    "Platforms: TikTok, Instagram Reels, YouTube Shorts. Submit each link within 30 minutes of posting."
-  ]
+  ],
+  "paused_reason": "2026-11-21: paused by the owner (raised minimum views); only Bobby, Diego and Boeshi for now."
  },
  {
   "id": "dylanpage",
