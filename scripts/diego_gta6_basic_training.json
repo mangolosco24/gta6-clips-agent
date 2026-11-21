@@ -1,0 +1,45 @@
+{
+ "slug": "diego_gta6_basic_training",
+ "campaign": "diego",
+ "source": "twitch_clip",
+ "video_id": "twitch_3284072530",
+ "source_url": "https://www.twitch.tv/diegoloveless/clip/HedonisticEnthusiasticDadBleedPurple-L0-tiipmIVe55uWi",
+ "source_page": "https://www.twitch.tv/diegoloveless/clip/HedonisticEnthusiasticDadBleedPurple-L0-tiipmIVe55uWi",
+ "start": 3.2,
+ "end": 23.0,
+ "title": "Diego Loveless says GTA 6's prison is exactly like his basic training",
+ "description": "Diego Loveless watches the inmates in GTA 6's prison and gets instant basic training flashbacks.",
+ "hashtags": [
+  "GTA",
+  "DiegoLoveless",
+  "gta6",
+  "gaming"
+ ],
+ "tags": [
+  "diego loveless gta 6",
+  "gta 6 prison",
+  "gta 6 funny moments",
+  "gta 6 basic training"
+ ],
+ "hook_text": "GTA 6 PRISON GAVE HIM\nBASIC TRAINING FLASHBACKS",
+ "highlight_words": [
+  "BASIC",
+  "TRAINING",
+  "HAIRLINE",
+  "DEADASS"
+ ],
+ "first_comment": "Anyone else had a barber in basic like this? 💈",
+ "layout": "facecam",
+ "facecam": [
+  0.705,
+  0.59,
+  0.29,
+  0.28
+ ],
+ "gameplay": [
+  0.0,
+  0.0,
+  0.69,
+  0.88
+ ]
+}
