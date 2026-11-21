@@ -18,3 +18,4 @@ so the same moment is never posted twice.
 | 2026-11-20 | boeshi_gta6_doomscrolling | twitch_121049357 | 5.5-25.6 | Boeshi found social media inside GTA 6 and started doomscrolling | yt scheduled 19:00 https://youtube.com/shorts/6B4VEqQAVbs |
 | 2026-11-20 | bobby_gta6_ferris_wheel_irl | twitch_1114338138 | 24.5-41.3 | Bobby VanRiper found his real-life Ferris wheel in GTA 6 | yt scheduled 03:00 (21/11) https://youtube.com/shorts/P2QY3bIb0wY |
 | 2026-11-21 | diego_gta6_basic_training | twitch_3284072530 | 3.2-23.0 | Diego Loveless says GTA 6's prison is exactly like his basic training | yt scheduled 17:00 https://youtube.com/shorts/s31lqIHRnrU |
+| 2026-11-21 | bobby_gta6_tigers_everywhere | twitch_2840426095 | 2.0-14.5 | Bobby VanRiper was not ready for the tigers in GTA 6 | yt scheduled 20:00 https://youtube.com/shorts/dXH_xPY04AE |
