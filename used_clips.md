@@ -22,3 +22,4 @@ so the same moment is never posted twice.
 | 2026-11-21 | boeshi_gta6_snake_rat | twitch_234706219 | 5.0-26.2 | Boeshi fed a rat to a snake in GTA 6 and it actually ate it | yt scheduled 23:00 https://youtube.com/shorts/dEphJEOGClw |
 | 2026-11-23 | bobby_gta6_plane_tree_bug | twitch_3602684574 | 0.5-27.0 | Bobby VanRiper hit a tree with his plane in GTA 6... and kept flying | yt scheduled 17:00 https://youtube.com/shorts/mwDwXE2C78E |
 | 2026-11-23 | diego_gta6_bird_watching | twitch_2381422353 | 0.0-29.8 | Diego Loveless started bird watching in the middle of a GTA 6 mission | yt scheduled 20:00 https://youtube.com/shorts/Ljb53Fxdl8w |
+| 2026-11-23 | diego_gta6_lucia_flips_car | twitch_248306404 | 0.0-19.6 | Diego Loveless can't believe Lucia just flipped a car by hand in GTA 6 | yt scheduled 23:00 https://youtube.com/shorts/3dTulTxCle4 |
