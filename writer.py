@@ -69,7 +69,11 @@ Packaging:
 - hashtags: pick 3-5 from the campaign's optional_hashtags plus clip-specific ones, and vary them
   between posts (required ones are added automatically).
 - description: 1-2 plain sentences of context. Credit and links are added by publisher.py.
-- first_comment: an easy either/or or "what would you do" question about the clip.
+- first_comment: ONE genuine question about this exact moment that people who played GTA 6 or
+  watched the clip can answer in a few words: how they reacted to the same scene, what they would
+  have done, or an easy either/or (e.g. "How did YOU react when the alligator showed up? 🐊").
+  English, max 1 emoji. Never "comment below", "like if", "tag a friend" or other engagement bait
+  (the campaign briefs forbid it), no fake context, no links.
 - Respect every line of the campaign's "brief" in campaigns.json."""
 
 
