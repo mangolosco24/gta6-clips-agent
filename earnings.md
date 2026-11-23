@@ -21,3 +21,4 @@ Cross-posts: one row per platform (yt / tiktok / ig in the "short" column), each
 | 2026-11-21 | diego_gta6_basic_training | diego | yt scheduled 17:00 | no | no |
 | 2026-11-21 | bobby_gta6_tigers_everywhere | bobby | yt scheduled 20:00 | no | no |
 | 2026-11-21 | boeshi_gta6_snake_rat | boeshi | yt scheduled 23:00 | no | no |
+| 2026-11-23 | bobby_gta6_plane_tree_bug | bobby | yt scheduled 17:00 | no | no |
