@@ -168,6 +168,15 @@ def unit_tests():
     ok(any("source_url" in e for e in writer.validate(tw)), "twitch clip without source_url rejected")
     ok(not any("source_url" in e for e in writer.validate(dict(tw, source_url="https://clips.twitch.tv/x"))),
        "twitch clip with source_url accepted")
+    camp0 = writer.campaigns()[camp_id]
+    rb = publisher.reminder_body(dict(base, first_comment="Q?"), "", "2026-11-20T19:00:00Z", camp0)
+    ok("Carica" in rb["summary"] and "Q?" in rb["description"] and "TITOLO" in rb["description"]
+       and rb["start"]["dateTime"] == "2026-11-20T19:00:00Z", "manual-mode reminder has title, comment, slot")
+    rb2 = publisher.reminder_body(base, "https://youtube.com/shorts/X", "2026-11-20T19:00:00Z", camp0)
+    ok("https://youtube.com/shorts/X" in rb2["description"], "auto-mode reminder has the YouTube link")
+    ok(publisher.slot_taken("2026-11-20T19:00:00Z", publisher.manual_slots() +
+                            [dt.datetime(2026, 11, 20, 19, 0, tzinfo=dt.timezone.utc)]),
+       "manual reserved slot counts as taken")
     for cid, camp in writer.campaigns().items():
         if camp.get("no_links"):
             meta = publisher.build_metadata(dict(base, campaign=cid))

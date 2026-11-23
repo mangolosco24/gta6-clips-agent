@@ -52,9 +52,17 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    automatically: nothing to do. Fix `output\<slug>\script.json` and run
    `.venv\Scripts\python agent.py --resume output\<slug>`.
    Also read `output\<slug>\words.json`: if the clip starts or ends mid-sentence, adjust start/end.
-7. MANUAL POSTING MODE (default; see AUTO POSTING MODE below): the owner uploads by hand, at 17:00, 20:00 or 23:00 Rome (the
-   scheduled task's prompt says which slot this run is for). Do NOT run
-   publisher.py or engager.py. Send `output\<slug>\short_<slug>.mp4` and
+7. MANUAL POSTING MODE (settings.json "posting_mode": "manual", the default; current mode since
+   2026-11-24 because Shorts uploaded through the API got almost no views while the same clips
+   uploaded by hand did fine): the owner uploads by hand from the phone at 17:00, 20:00 or 23:00
+   Rome (the scheduled task's prompt says which slot this run is for).
+   FIRST, before anything else: `.venv\Scripts\python publisher.py --check-slot HH:MM`; TAKEN = stop,
+   change nothing, one line "Slot HH:MM già occupato, niente da fare" (it also counts slots
+   reserved for manual upload). The run.lock / overlap rules of AUTO mode apply here too.
+   Never upload with publisher.py. After the check of step 6, reserve
+   the slot and create the phone reminder: `.venv\Scripts\python publisher.py --reminder
+   output\<slug> --slot HH:MM` (Calendar event at the slot time with title, description, first
+   comment and campaign link). Send `output\<slug>\short_<slug>.mp4` and
    `short_<slug>_upload.txt` (copy-paste ready title, description with credit and hashtags, first
    comment) to the user with SendUserFile, status proactive. agent.py also copies both files to
    Google Drive (`share_dirs` in settings.json, folder "Shorts GTA6") so the owner can post from
@@ -65,8 +73,8 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    Never commit `output/`, `models/`, `.venv/`, client_secret*.json, youtube_token.json.
 9. Final message in Italian, short:
    - title + length, and "Pubblicalo alle 17:00", "alle 20:00" or "alle 23:00" (this run's slot);
-   - how to post: YouTube Studio (studio.youtube.com) → Crea → Carica video → the mp4; paste
-     title and description from the upload file; "No, non è destinato ai bambini"; Pubblica;
+   - how to post: app YouTube sul telefono → + → Short → the mp4 from Drive (Shorts GTA6); paste
+     title and description from the upload file or the Calendar event; Pubblica;
    - "Poi invia il link entro 30 minuti" + the campaign link from campaigns.json;
    - which campaign this Short is for, and "Pubblicalo anche su TikTok" (+ "e Instagram Reels"
      only if the campaign's `platforms` includes instagram), "stesso mp4, didascalie nel file di
@@ -75,7 +83,7 @@ Runs on the owner's Windows PC (PowerShell). Always use `.venv\Scripts\python`.
    - remind to send the audience country breakdown on the Clipping Nation Discord for Shorts
      that passed 2,000 views (rows of earnings.md with analytics not sent, older than ~2 days).
 
-AUTO POSTING MODE (only if settings.json has "posting_mode": "auto" AND YouTube credentials exist:
+AUTO POSTING MODE (currently OFF; only if settings.json has "posting_mode": "auto" AND YouTube credentials exist:
 client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN):
 - FIRST, before anything else: `.venv\Scripts\python publisher.py --check-slot HH:MM` for this
   run's slot. If it prints TAKEN, a Short is already scheduled for that slot (e.g. the owner asked

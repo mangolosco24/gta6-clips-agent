@@ -286,24 +286,50 @@ def upload(video, meta, privacy, publish_at, token):
     return r.json()["id"]
 
 
+def reminder_body(script, url, publish_at, camp):
+    """Calendar event body. url = YouTube link of a scheduled upload, or "" for a Short the owner
+    uploads by hand (manual mode): then the event carries everything needed to post from the phone."""
+    start = _utc(publish_at)
+    within = camp.get("submit_within_minutes", 30)
+    if url:
+        summary = f"Invia link Short ({camp.get('streamer', '')}) entro {within} min"
+        desc = (f"YouTube: {url}\n\nInvia qui: {camp.get('campaign_url', '')}\n\n"
+                f"TikTok/Instagram: testi nel file _upload.txt su Drive.\n{script['title']}")
+    else:
+        meta = build_metadata(script)
+        summary = f"Carica Short {camp.get('streamer', '')} su YouTube + invia link"
+        desc = (f"1) App YouTube > + > Short > carica short_{script['slug']}.mp4 (Drive, Shorts GTA6).\n"
+                f"2) TITOLO:\n{meta['title']}\n\n3) DESCRIZIONE:\n{meta['description']}\n\n"
+                f"4) Pubblica, poi primo commento (fissalo):\n{script.get('first_comment', '')}\n\n"
+                f"5) Invia il link entro {within} min: {camp.get('campaign_url', '')}\n"
+                f"TikTok/Instagram: testi nel file _upload.txt su Drive.")
+    return {
+        "summary": summary, "description": desc,
+        "start": {"dateTime": start.strftime("%Y-%m-%dT%H:%M:%SZ")},
+        "end": {"dateTime": (start + dt.timedelta(minutes=within)).strftime("%Y-%m-%dT%H:%M:%SZ")},
+        "reminders": {"useDefault": False, "overrides": [{"method": "popup", "minutes": 0}]},
+    }
+
+
+def manual_slots():
+    """Slots (UTC datetimes) reserved by Shorts prepared for manual upload (manual_slot.json)."""
+    out = []
+    for f in glob.glob(os.path.join(HERE, "output", "*", "manual_slot.json")):
+        try:
+            out.append(_utc(json.load(open(f, encoding="utf-8"))["at"]))
+        except (OSError, ValueError, KeyError):
+            continue
+    return out
+
+
 def calendar_reminder(script, url, publish_at, token):
-    """Google Calendar event at the moment the Short goes public, with a phone pop-up, so the
-    owner submits the link to the campaign within 30 minutes. Never blocks publishing."""
+    """Google Calendar event at the moment the Short goes public (or must be uploaded by hand),
+    with a phone pop-up, so the owner submits the link within 30 minutes. Never blocks publishing."""
     cfg = os.path.join(HERE, "settings.json")
-    if not (os.path.exists(cfg) and json.load(open(cfg, encoding="utf-8")).get("calendar_reminders")):
+    if not (os.path.exists(cfg) and json.load(open(cfg, encoding="utf-8-sig")).get("calendar_reminders")):
         return
     try:
-        camp = campaign(script)
-        start = _utc(publish_at)
-        within = camp.get("submit_within_minutes", 30)
-        body = {
-            "summary": f"Invia link Short ({camp.get('streamer', '')}) entro {within} min",
-            "description": (f"YouTube: {url}\n\nInvia qui: {camp.get('campaign_url', '')}\n\n"
-                            f"TikTok/Instagram: testi nel file _upload.txt su Drive.\n{script['title']}"),
-            "start": {"dateTime": start.strftime("%Y-%m-%dT%H:%M:%SZ")},
-            "end": {"dateTime": (start + dt.timedelta(minutes=within)).strftime("%Y-%m-%dT%H:%M:%SZ")},
-            "reminders": {"useDefault": False, "overrides": [{"method": "popup", "minutes": 0}]},
-        }
+        body = reminder_body(script, url, publish_at, campaign(script))
         r = requests.post(CALENDAR_URL, json=body, timeout=30,
                           headers={"Authorization": f"Bearer {token}"})
         if r.status_code >= 300:
@@ -367,13 +393,28 @@ def main():
                     help="print FREE or TAKEN for the next HH:MM Rome slot, then exit")
     ap.add_argument("--test-calendar", action="store_true",
                     help="create a test reminder event 3 minutes from now")
+    ap.add_argument("--reminder", metavar="FOLDER",
+                    help="manual mode: reserve --slot HH:MM for output/<slug> (no upload) and create "
+                         "the Calendar event with title, description, first comment and campaign link")
     a = ap.parse_args()
 
     if a.auth:
         return auth_flow()
+    if a.reminder:
+        if not a.slot or a.slot == "auto":
+            ap.error("--reminder needs --slot HH:MM")
+        d = os.path.abspath(a.reminder)
+        script = json.load(open(os.path.join(d, "script.json"), encoding="utf-8"))
+        at = slot_at(a.slot)
+        token = access_token()
+        if slot_taken(at, taken_times(token) + manual_slots()):
+            sys.exit(f"SLOT TAKEN: a Short is already reserved/scheduled around {at}")
+        json.dump({"slot": a.slot, "at": at}, open(os.path.join(d, "manual_slot.json"), "w", encoding="utf-8"))
+        log(f"slot {a.slot} Rome reserved for manual upload: {at}")
+        return calendar_reminder(script, "", at, token)
     if a.check_slot:
         at = slot_at(a.check_slot)
-        taken = slot_taken(at, taken_times(access_token()))
+        taken = slot_taken(at, taken_times(access_token()) + manual_slots())
         local = _utc(at).astimezone(__import__("zoneinfo").ZoneInfo(SLOT_TZ)).strftime("%Y-%m-%d %H:%M")
         print(f"{'TAKEN' if taken else 'FREE'} {local} Rome ({at})")
         return
