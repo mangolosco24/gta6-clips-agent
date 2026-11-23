@@ -20,7 +20,17 @@ Never delete and re-upload a weak Short: campaigns require 30 days online and ba
 | 2026-11-20 01:00 | dom_gta6_toxic_karen | funny NPC interaction (Karen, provoke), Kick clip, facecam | 19.7 s | ? | ? | | Dom; extra slot |
 | 2026-11-18 ~19:00 | tomo_gta6_empty_box | IRL vlog (not gameplay), not submitted | 37 s | 25 | ? | 2026-11-19 23:30 | warm-up post |
 
+## Snapshot 2026-11-24 00:10 (YouTube API stats + owner's TikTok screenshot)
+YouTube: the 3 Shorts uploaded BY HAND from the phone on 18-19/11 have 990-1,405 views. Every Short
+uploaded by publisher.py (API, scheduled) since 19/11 has 0-41 views, including Bobby/Boeshi/Diego
+clips that on TikTok (uploaded by hand) got 220-851 views. Views of some API uploads even dropped
+(crib 14 -> 0, Dylan 38 -> 2). Content is not the problem: the API-upload path is the main suspect
+(unverified OAuth app; YouTube may limit distribution of such uploads).
+TikTok @clip6_gtavi: Dom gas 1,100 | Bobby sunglasses 851 | Dylan respray 613 | Boeshi doomscrolling
+561 | Boeshi snake 261 | Bobby 222 | Diego 220. 3 followers, 71 likes.
+
 ## Lessons so far
+- TEST IN PROGRESS: upload YouTube Shorts by hand (phone app) instead of publisher.py and compare.
 - First reactions / opinions about GTA 6 itself (rating, "is it worth it", first impressions)
   did best: launch week, people search what streamers think of the game. Prefer them while the
   game is new.
