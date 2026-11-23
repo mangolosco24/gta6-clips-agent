@@ -32,6 +32,9 @@ TikTok @clip6_gtavi: Dom gas 1,100 | Bobby sunglasses 851 | Dylan respray 613 | 
 ## Lessons so far
 - First comment = a genuine question on the moment ("how did YOU react to this scene?"), never
   "comment below"-style bait (owner's idea, 2026-11-24): track if comments go up.
+- TikTok @clip6_gtavi audience 2026-11-24: Italy 79%, France 10.6%, Switzerland 1.7%, UK <1%:
+  Tier 1 ~1%, far below the 40% the campaigns require. Do NOT submit TikTok links until this changes
+  (rejected clips also fill the pending-clip limit). YouTube country split still to check.
 - TEST IN PROGRESS: upload YouTube Shorts by hand (phone app) instead of publisher.py and compare.
 - First reactions / opinions about GTA 6 itself (rating, "is it worth it", first impressions)
   did best: launch week, people search what streamers think of the game. Prefer them while the
