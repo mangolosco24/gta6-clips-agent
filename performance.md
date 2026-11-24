@@ -36,6 +36,9 @@ TikTok @clip6_gtavi: Dom gas 1,100 | Bobby sunglasses 851 | Dylan respray 613 | 
   Tier 1 ~1%, far below the 40% the campaigns require. Do NOT submit TikTok links until this changes
   (rejected clips also fill the pending-clip limit). YouTube channel, last 28 days: Italy 14.1%, Canada 11.4%, UK 10.2%, US 9.1%,
   Germany 4.5% -> Tier 1 about 31% + Australia: close to 40%. YouTube is the platform that can pay.
+- 2026-11-24 20:54: the alligator Short uploaded BY HAND (23/11 23:28 UTC) has 1 view after 21 h, like
+  the API uploads. So since ~19/11 the whole channel gets almost no distribution, not only API
+  uploads. Owner considers a fresh channel with manual uploads only.
 - TEST IN PROGRESS: upload YouTube Shorts by hand (phone app) instead of publisher.py and compare.
 - First reactions / opinions about GTA 6 itself (rating, "is it worth it", first impressions)
   did best: launch week, people search what streamers think of the game. Prefer them while the
