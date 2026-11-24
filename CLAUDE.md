@@ -110,6 +110,14 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
   pops up a reminder. If the log says "calendar reminder not created", mention it in the final message.
   (remind.py prints the same text; app push notifications do not work from scheduled runs.)
 
+## New YouTube channel phase (from 2026-11-24)
+The old channel stopped getting views (~19/11, even for hand uploads). The owner is starting a
+NEW channel, uploaded only by hand from the phone app (never publisher.py uploads, never the API).
+Keep preparing the 3 daily Shorts as usual (reserve slots with --reminder): the owner picks ONE
+of them per day to post on the new channel for the first week, then 2-3 per day. In the final
+message say "Scegli tu quale caricare oggi sul canale nuovo (uno al giorno questa settimana)".
+Never delete or hide videos on the old channel (campaigns require 30 days live).
+
 ## Owner requests outside the schedule
 - "Prepara gli Short di oggi adesso" (e.g. in the morning, when the afternoon is busy): run the
   AUTO routine once per slot (17:00, 20:00, 23:00), one after the other, each with its own
