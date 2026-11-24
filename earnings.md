@@ -30,3 +30,4 @@ Cross-posts: one row per platform (yt / tiktok / ig in the "short" column), each
 | 2026-11-24 | boeshi_gta6_beeping_bag | boeshi | manual 23:00 | no | no |
 | 2026-11-24 | diego_gta6_lady_rams_car | diego | manual | no | no |
 | 2026-11-24 | boeshi_gta6_13_years_chores | boeshi | manual | no | no |
+| 2026-11-24 | boeshi_gta6_shark_took_dobbs | boeshi | manual | no | no |

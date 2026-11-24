@@ -29,3 +29,4 @@ so the same moment is never posted twice.
 | 2026-11-24 | boeshi_gta6_beeping_bag | twitch_1373793025 | 3.7-34.0 | Boeshi's bag started beeping in GTA 6... then the cops showed up | manual 23:00 |
 | 2026-11-24 | diego_gta6_lady_rams_car | twitch_3197216273 | 24.6-59.2 | She kept ramming Diego Loveless's car while he was stuck on the phone | manual extra (new channel) |
 | 2026-11-24 | boeshi_gta6_13_years_chores | twitch_889413900 | 0.0-13.0 | Boeshi waited 13 years for GTA 6... to do house chores | manual extra (new channel) |
+| 2026-11-24 | boeshi_gta6_shark_took_dobbs | twitch_3650456824 | 19.6-46.2 | Boeshi had ONE job in GTA 6... the shark took his friend | manual extra (new channel) |
