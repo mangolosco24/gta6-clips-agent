@@ -30,3 +30,4 @@ so the same moment is never posted twice.
 | 2026-11-24 | diego_gta6_lady_rams_car | twitch_3197216273 | 24.6-59.2 | She kept ramming Diego Loveless's car while he was stuck on the phone | manual extra (new channel) |
 | 2026-11-24 | boeshi_gta6_13_years_chores | twitch_889413900 | 0.0-13.0 | Boeshi waited 13 years for GTA 6... to do house chores | manual extra (new channel) |
 | 2026-11-24 | boeshi_gta6_shark_took_dobbs | twitch_3650456824 | 19.6-46.2 | Boeshi had ONE job in GTA 6... the shark took his friend | manual extra (new channel) |
+| 2026-11-25 | boeshi_gta6_plane_stunt_crash | twitch_4042089994 | 15.5-30.0 | Boeshi tried a plane stunt in GTA 6... it did not end well | manual 17:00 |
