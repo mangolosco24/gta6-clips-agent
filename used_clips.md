@@ -31,3 +31,4 @@ so the same moment is never posted twice.
 | 2026-11-24 | boeshi_gta6_13_years_chores | twitch_889413900 | 0.0-13.0 | Boeshi waited 13 years for GTA 6... to do house chores | manual extra (new channel) |
 | 2026-11-24 | boeshi_gta6_shark_took_dobbs | twitch_3650456824 | 19.6-46.2 | Boeshi had ONE job in GTA 6... the shark took his friend | manual extra (new channel) |
 | 2026-11-25 | boeshi_gta6_plane_stunt_crash | twitch_4042089994 | 15.5-30.0 | Boeshi tried a plane stunt in GTA 6... it did not end well | manual 17:00 |
+| 2026-11-25 | bobby_gta6_endless_fries | twitch_4041367476 | 5.9-26.0 | Bobby VanRiper found the endless french fries in GTA 6 | manual 20:00 |
