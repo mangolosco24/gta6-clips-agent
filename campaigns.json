@@ -246,7 +246,7 @@
  },
  {
   "id": "brett",
-  "active": false,
+  "active": true,
   "name": "BrettLiftsXP GTA VI Clipping (Funnel Clips Community)",
   "campaign_url": "https://contentrewards.com/c/campaigns/954cf1f2-1a69-4f0f-b46c-18a9dfddb219",
   "pay": "$1 / 1K views on YouTube and Instagram, $2 / 1K on TikTok; min payout $2 per post (= 2,000 views YT/IG, 1,000 TikTok), max $100 per post. Budget $1,000 ($788 left on 2026-11-26). 50%+ Tier 1 audience (USA, Canada, EUROPE).",
@@ -289,7 +289,10 @@
    "x": "(W-w)/2",
    "y": "665"
   },
-  "paused_reason": "2026-11-26: waiting for the owner to join the Whop community whop.com/clips-by-jai + the campaign (banner already saved in assets/brett_banner.png). Facecam rectangles still to measure.",
+  "layout": "facecam",
+  "facecam": [0.0, 0.0, 1.0, 0.43],
+  "gameplay": [0.0, 0.47, 1.0, 0.495],
+  "source_note": "His YouTube GTA streams are already VERTICAL 1080x1920 (cam on top, game below, black bars): facecam/gameplay rectangles cut those two parts.",
   "brief": [
    "GTA 6 gaming content ONLY from Brett's YouTube streams/videos (youtube.com/@BrettLiftsXP, rule 5: gaming from YouTube, IRL from Twitch). Only streams from 2026-10-20 onward, never older ones. Never his IRL/hot tub/mukbang streams or other games.",
    "Show Brett's face in every video (facecam layout) and the campaign's Twitch banner (assets/brett_banner.png) visible in the video.",
