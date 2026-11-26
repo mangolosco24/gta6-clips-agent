@@ -1,0 +1,20 @@
+{
+ "slug": "brett_gta6_best_driver",
+ "campaign": "brett",
+ "source": "twitch_clip",
+ "video_id": "twitch_1983418806",
+ "source_url": "https://www.twitch.tv/brettliftsxp/clip/AverageThankfulWalrusCharlietheUnicorn-0xEjrZZsbHV24z5c",
+ "source_page": "https://www.twitch.tv/brettliftsxp/clip/AverageThankfulWalrusCharlietheUnicorn-0xEjrZZsbHV24z5c",
+ "start": 2.8,
+ "end": 25.0,
+ "title": "\"I'm the best driver\" in GTA 6... @BrettLiftsXP lost it",
+ "description": "Payton took the wheel in GTA 6 and promised she was the best driver alive. The road had other plans. @BrettLiftsXP live on twitch.tv/brettliftsxp and youtube.com/@BrettLiftsXP",
+ "hashtags": ["gta6", "gtavi", "brettliftsxp", "twitch"],
+ "tags": ["brettliftsxp gta 6", "gta 6 driving fail", "gta 6 funny moments", "brettliftsxp"],
+ "hook_text": "SHE SAID SHE'S\nTHE BEST DRIVER",
+ "highlight_words": ["BEST", "ROAD", "CAR"],
+ "first_comment": "Be honest, was it her or was it really the road? 🚗",
+ "layout": "facecam",
+ "facecam": [0.0, 0.0, 0.285, 0.30],
+ "gameplay": [0.29, 0.1, 0.6, 0.76]
+}
