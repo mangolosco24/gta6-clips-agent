@@ -32,3 +32,4 @@ so the same moment is never posted twice.
 | 2026-11-24 | boeshi_gta6_shark_took_dobbs | twitch_3650456824 | 19.6-46.2 | Boeshi had ONE job in GTA 6... the shark took his friend | manual extra (new channel) |
 | 2026-11-25 | boeshi_gta6_plane_stunt_crash | twitch_4042089994 | 15.5-30.0 | Boeshi tried a plane stunt in GTA 6... it did not end well | manual 17:00 |
 | 2026-11-25 | bobby_gta6_endless_fries | twitch_4041367476 | 5.9-26.0 | Bobby VanRiper found the endless french fries in GTA 6 | manual 20:00 |
+| 2026-11-26 | bobby_gta6_plane_tree_glitch | twitch_551763927 | 3.8-30.0 | Bobby VanRiper hit a tree in GTA 6... then flew 1000 feet up | manual 17:00 (27/11) |

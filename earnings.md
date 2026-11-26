@@ -33,3 +33,4 @@ Cross-posts: one row per platform (yt / tiktok / ig in the "short" column), each
 | 2026-11-24 | boeshi_gta6_shark_took_dobbs | boeshi | manual | no | no |
 | 2026-11-25 | boeshi_gta6_plane_stunt_crash | boeshi | manual 17:00 | no | no |
 | 2026-11-25 | bobby_gta6_endless_fries | bobby | manual 20:00 | no | no |
+| 2026-11-26 | bobby_gta6_plane_tree_glitch | bobby | manual 17:00 | no | no |
