@@ -34,3 +34,4 @@ so the same moment is never posted twice.
 | 2026-11-25 | bobby_gta6_endless_fries | twitch_4041367476 | 5.9-26.0 | Bobby VanRiper found the endless french fries in GTA 6 | manual 20:00 |
 | 2026-11-26 | bobby_gta6_plane_tree_glitch | twitch_551763927 | 3.8-30.0 | Bobby VanRiper hit a tree in GTA 6... then flew 1000 feet up | manual, posted by hand 26/11 ~18:00 (new channel) |
 | 2026-11-26 | boeshi_gta6_airboat_jump | twitch_936698504 | 4.0-28.0 | Boeshi had to jump onto a moving airboat in GTA 6 | manual 20:00 |
+| 2026-11-26 | brett_gta6_shark_spear_gun | twitch_2894187013 | 5.3-27.6 | @BrettLiftsXP vs TWO sharks in GTA 6 with only a spear gun | manual extra (new channel, owner asked even if average) |
