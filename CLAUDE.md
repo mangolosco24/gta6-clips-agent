@@ -170,6 +170,9 @@ Never delete or hide videos on the old channel (campaigns require 30 days live).
   for the whole Short (montage.py overlays it like the KreekCraft logo); every caption tags
   twitch.tv/darealboeshi. Favour his voice bits and "mewing" face; his GTA streams are titled
   "GTA 6 Leaked" (a joke title, normal gameplay). 3,000 views minimum per post.
+- BrettLiftsXP (brett, Funnel Clips): GTA 6 gaming ONLY from his YouTube streams (@BrettLiftsXP,
+  from 2026-10-20), facecam always, Twitch banner assets/brett_banner.png visible, tag @BrettLiftsXP.
+  Europe counts as Tier 1 here, so TikTok ($2/1K) is worth posting. Skip girlfriend/"gyat"/strip moments.
 - Diego Loveless: campaign ENDED 2026-11-26 (active false). Never clip him unless the owner says a new one opened.
 - Dom (dasgasd3m) streams on Kick: use only Kick clips in the GTA VI category from 2026-11-18
   onwards (clips.py filters them). Never Instagram for Dom.

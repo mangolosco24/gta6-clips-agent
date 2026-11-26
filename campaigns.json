@@ -245,6 +245,62 @@
   ]
  },
  {
+  "id": "brett",
+  "active": false,
+  "name": "BrettLiftsXP GTA VI Clipping (Funnel Clips Community)",
+  "campaign_url": "https://contentrewards.com/c/campaigns/954cf1f2-1a69-4f0f-b46c-18a9dfddb219",
+  "pay": "$1 / 1K views on YouTube and Instagram, $2 / 1K on TikTok; min payout $2 per post (= 2,000 views YT/IG, 1,000 TikTok), max $100 per post. Budget $1,000 ($788 left on 2026-11-26). 50%+ Tier 1 audience (USA, Canada, EUROPE).",
+  "submit_within_minutes": 30,
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "instagram"
+  ],
+  "eligible_from": "2026-10-20",
+  "streamer": "BrettLiftsXP",
+  "credit": "BrettLiftsXP on Twitch & YouTube",
+  "channel_url": "https://www.twitch.tv/brettliftsxp",
+  "watch_more": "Full stream:",
+  "sources": [
+   "https://www.youtube.com/@BrettLiftsXP/streams",
+   "https://www.youtube.com/@BrettLiftsXP/videos"
+  ],
+  "title_keywords": [
+   "gta 6",
+   "gta6",
+   "gta vi",
+   "grand theft auto vi"
+  ],
+  "required_hashtags": [],
+  "optional_hashtags": [
+   "gta6",
+   "gtavi",
+   "brettliftsxp",
+   "gaming",
+   "funnymoments",
+   "streamer"
+  ],
+  "required_text": "@BrettLiftsXP | twitch.tv/brettliftsxp | youtube.com/@BrettLiftsXP",
+  "cta_overlay": "FOLLOW BRETTLIFTSXP\nON TWITCH",
+  "disclosure": "",
+  "logo": {
+   "file": "assets/brett_banner.png",
+   "width": 620,
+   "x": "(W-w)/2",
+   "y": "665"
+  },
+  "paused_reason": "2026-11-26: waiting for setup: the owner must join the Whop community whop.com/clips-by-jai + the campaign, and the Twitch banner (campaign Drive folder) must be saved as assets/brett_banner.png. Facecam rectangles still to measure.",
+  "brief": [
+   "GTA 6 gaming content ONLY from Brett's YouTube streams/videos (youtube.com/@BrettLiftsXP, rule 5: gaming from YouTube, IRL from Twitch). Only streams from 2026-10-20 onward, never older ones. Never his IRL/hot tub/mukbang streams or other games.",
+   "Show Brett's face in every video (facecam layout) and the campaign's Twitch banner (assets/brett_banner.png) visible in the video.",
+   "Tag Brett in every post: @BrettLiftsXP in title/description, plus his Twitch and YouTube links. The owner's channel bio must link Brett's Twitch and YouTube.",
+   "Creative, high-quality edits with strong hooks, captions and pacing; no basic raw clips, no fake reaction clips, no AI clipping tools (Opus, Vizard), no YouTube/TikTok/Instagram/Snapchat logos or UI in the edit.",
+   "Original edits only: never reuse clips Brett already posted on his own pages (check his Shorts) or other clippers' edits. Minimum 6 s.",
+   "Never sexualise Lucia/NPCs or his girlfriend Payton (skip 'gyat'/strip club/nudity moments). No story spoilers without warning, no isolated cutscenes (Rockstar rules).",
+   "50%+ Tier 1 audience (USA, Canada, Europe). Posts stay live forever, never deleted. At min views the owner sends a screen recording of the analytics (app store -> app -> video -> analytics, every tab). No botting."
+  ]
+ },
+ {
   "id": "diego",
   "active": false,
   "closed_reason": "2026-11-26: campaign ended (owner reported).",
