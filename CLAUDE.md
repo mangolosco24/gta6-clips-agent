@@ -113,9 +113,12 @@ client_secret*.json + youtube_token.json, or YT_CLIENT_ID / YT_CLIENT_SECRET / Y
 ## New YouTube channel phase (from 2026-11-24)
 The old channel stopped getting views (~19/11, even for hand uploads). The owner is starting a
 NEW channel, uploaded only by hand from the phone app (never publisher.py uploads, never the API).
-Keep preparing the 3 daily Shorts as usual (reserve slots with --reminder): the owner picks ONE
-of them per day to post on the new channel for the first week, then 2-3 per day. In the final
-message say "Scegli tu quale caricare oggi sul canale nuovo (uno al giorno questa settimana)".
+2026-11-26: the new channel works (3.7K views in 48 h; shark/fries/ramming Shorts 1.1-1.3K each).
+Keep preparing 3 Shorts per day (reserve slots with --reminder): the owner decides WHEN to post
+each one (not necessarily at the slot time). The bar is high: pick the moments that make people
+LAUGH the most (clear visual gag + the streamer's panic/laugh); skip a slot rather than post an
+average clip. Skip Twitch clips that are already edited by another clipper (burned-in captions).
+In the final message say "Postalo quando vuoi sul canale nuovo".
 Never delete or hide videos on the old channel (campaigns require 30 days live).
 
 ## Owner requests outside the schedule

@@ -29,7 +29,15 @@ clips that on TikTok (uploaded by hand) got 220-851 views. Views of some API upl
 TikTok @clip6_gtavi: Dom gas 1,100 | Bobby sunglasses 851 | Dylan respray 613 | Boeshi doomscrolling
 561 | Boeshi snake 261 | Bobby 222 | Diego 220. 3 followers, 71 likes.
 
+## Snapshot 2026-11-26 (NEW channel, hand uploads from the phone, owner's screenshot)
+3,729 views in 48 h, 8.7 h watch time, 3 subscribers. Top: Bobby VanRiper (endless french fries?) 1.3K |
+boeshi_gta6_shark_took_dobbs 1.2K | diego_gta6_lady_rams_car 1.1K. The new channel works.
+
 ## Lessons so far
+- 2026-11-26: on the new channel the LAUGH-OUT-LOUD moments win (shark drags his friend away while
+  he panics, lady keeps ramming the car, absurd discoveries). Owner: "keep the level high, take the
+  clips that make people laugh the most". A clear visual gag + the streamer's panic/laugh > talk or
+  chill gameplay. Short and quiet clips (13 s chores) were judged "not that funny" by the owner.
 - First comment = a genuine question on the moment ("how did YOU react to this scene?"), never
   "comment below"-style bait (owner's idea, 2026-11-24): track if comments go up.
 - TikTok @clip6_gtavi audience 2026-11-24: Italy 79%, France 10.6%, Switzerland 1.7%, UK <1%:
