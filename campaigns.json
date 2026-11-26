@@ -246,7 +246,8 @@
  },
  {
   "id": "diego",
-  "active": true,
+  "active": false,
+  "closed_reason": "2026-11-26: campaign ended (owner reported).",
   "name": "DiegoLoveless GTA 6 Clipping (ClipLaunch)",
   "campaign_url": "https://contentrewards.com/c/campaigns/5d37d3dd-adf3-401f-9c62-24bb54d5087a",
   "pay": "$1.00 / 1K views on TikTok, Instagram and YouTube; min payout $1 (= 1,000 views), max $300 per clip. 40%+ Tier 1 audience.",
@@ -361,7 +362,7 @@
    "Audience: at least 40% Tier 1 (US, UK, CA, AU). Engagement at least 0.8%. Likes visible. Clips stay public for 30 days. Never more than 5 near-identical posts.",
    "Platforms: TikTok, Instagram Reels, YouTube Shorts. Submit each link within 30 minutes of posting."
   ],
-  "paused_reason": "2026-11-21: paused by the owner (raised minimum views); only Bobby, Diego and Boeshi for now."
+  "paused_reason": "2026-11-21: paused by the owner (raised minimum views); only Bobby, Diego and Boeshi for now (Diego ended 2026-11-26)."
  },
  {
   "id": "dylanpage",
